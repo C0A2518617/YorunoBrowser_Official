@@ -1,0 +1,124 @@
+# 🌙 YorunoBrowser
+
+> **The ultimate underground browser that will never pass the App Store** — A one-handed web browser & file manager for iOS
+
+[![Platform](https://img.shields.io/badge/Platform-iOS-black?logo=apple)](https://altstore.io)
+[![Distribution](https://img.shields.io/badge/Install-AltStore-blue)](https://altstore.io)
+[![Billing](https://img.shields.io/badge/Billing-Patreon-orange?logo=patreon)](https://patreon.com)
+
+---
+
+## ✨ Key Features
+
+### 🌐 Browser
+- **Optimized for one-handed use** — Gesture-enabled UI consolidated at the bottom with top/bottom padding, so your thumb handles everything
+- **Forced dark mode** — Automatically darkens white-heavy sites. Easy on the eyes for late-night browsing
+- **Tab groups** — Organize tabs by purpose
+- **Content saving** — Download media like `.ts` / `.mp4` with a single tap
+- **Ad blocker** — Removed at the CSS level. Supports custom per-site exceptions
+- **Popup & transparent overlay blocker** — Automatically eliminates intrusive elements
+- **SelectToSearch** — A Search button appears when you select text. Search Google with a custom keyword (e.g., `{text} full episode`)
+
+### 📚 Me (My Page)
+- Bookmarks / Browsing history / Download history
+- Download history lets you review files chronologically and view detailed error messages
+
+### 📁 File / Explorer
+- PC-style list view (filterable by FileType & Size)
+- **File conversion** — Compress, resize, and more — all within the app
+- **Multiple sort options** — Size / Name / Date / LikeTime count (ASC/DESC)
+- **Pitch-correction encoding** — Supports voice changer removal. Check pitch in audio/video with the pitch checker and apply bulk changes
+
+### 🖼️ File / Grid
+- Quickly browse images, videos, and audio in a grid layout
+
+### ▶️ File / ContentViewer
+- Swipe left/right to navigate through files
+- **LikeTime (timestamps)** — Jump to your favorite scenes anytime
+- **25% skip buttons** — Move playback position without reaching to the screen edge (prevents dropping your phone)
+
+### 📺 File / YoruTube (Coming Soon)
+- Browse local files in a YouTube-like UI
+- Organize content by creator folder
+
+### ⚙️ Settings
+- Settings screen with clear descriptions — no guesswork
+- `SearchEngine` / `ThemeColor` / `Icon` / `ForceDarkMode` / `Gesture` / `AdsCleaner` / `ExceptionSite` / `PopupHunter` / `ForceZoom` / `BlockSite` / `SelectToSearch` / `PaddingForOneHand` / `ContentViewer` / `ProximityGesture` / `Legal` / `Version`
+
+### 💳 Billing
+- Plan comparison, download feature list, and usage history displayed in a stylish card UI
+
+---
+
+## 📥 Download Feature
+
+Save videos, audio, and multiple images directly from supported sites.
+
+```
+1. Tap the DL button
+2. Select the file
+3. Confirm the filename and type, then Execute / Cancel
+4. Download runs (failed downloads do not consume your DL count)
+```
+
+### Supported Sites
+| Status | Example Sites |
+|--------|---------------|
+| ✅ Supported (HLS/MP4) | Xvideos / Pornhub / TokyoMotion / Nicovideo, etc. |
+| 🔗 Redirect (External DL) | X (formerly Twitter) / YouTube |
+| ❌ Unsupported (DRM) | Netflix / Amazon Prime Video, etc. |
+
+> **Error Code Reference**
+> - `400` — DL system error
+> - `404` — Broken link
+> - `500` — Blocked by the site
+
+※ Supported sites may change without notice.
+
+---
+
+## 💰 Plans & Pricing
+
+Available as a monthly subscription on Patreon.
+
+| Plan | Price | Content DL | File Conversion | Theme | Discord |
+|------|-------|:----------:|:---------------:|:-----:|:-------:|
+| **Free** | $0 / mo | 10 DL/day | — | — | — |
+| **Standard** | $1 / mo | Unlimited | — | — | — |
+| **Pro** | $5 / mo | Unlimited | ✅ | — | — |
+| **Premium** | $20 / mo | Unlimited | ✅ | Color / Icon | DM |
+| **Supporter** | $100 / mo | Unlimited | ✅ | Color / Icon | DM |
+
+<strong>Recommended: Standard Plan</strong> — All the core features that make this browser great — one-handed operation and more — are available for free. But if you want unlimited video downloads, this is the plan for you. When downloading, you often have to choose between Unknown SD/HD, HLS, and GIF. If you pick wrong, you don't have to wait until tomorrow — no limit means no risk of the video disappearing by the time you come back.
+
+---
+
+## 📲 Installation
+
+YorunoBrowser is not on the App Store. Install via **AltStore**.
+
+### EU / Japan Users (Recommended)
+1. Install **AltStore PAL** on your iPhone
+2. Add the GitHub link
+3. Install from AltStore
+
+### Global
+1. Install **AltServer** on your PC
+2. Install **AltStore** on your iPhone
+3. Download the `.ipa` file from GitHub Releases
+4. Install the IPA via AltStore
+
+---
+
+## FAQ
+1. **Why isn't it on the App Store?** — Many features conflict with Apple's guidelines, making App Store distribution impossible.
+2. **It's Chinese-made, you're stealing my data, you spy!** — The developer is an individual living in Japan. The source is private, but no data is collected. Even if it were, the storage costs would make it completely impractical.
+3. **Can I use it for free?** — Yes, there is a free plan. However, it has a download limit, so frequent users are encouraged to subscribe to a paid plan.
+4. **Is it illegal?** — This software is simply a browser and does not promote illegal activity. Please use it legally and at your own responsibility.
+5. **Android version?** — Currently iOS only, but an Android version may be considered in the future. *(Seriously though — Android users spend less, and the app would just get cracked with ModApks, so probably not.)*
+6. **Windows/Mac version?** — Would be nice to support someday, but not many people browse on a PC for... *that*.
+7. **Can I decompile it and unlock paid features for free?** — F**K YOU. Are you killing me?
+
+## 📄 License
+
+This software is proprietary. Unauthorized reproduction or redistribution is prohibited.
