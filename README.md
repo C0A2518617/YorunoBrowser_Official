@@ -50,7 +50,52 @@
 
 ---
 
-## 📥 Download Feature
+## Screenshots
+
+### 🌐 BrowserTop (PaddingForOneHand / Scroll padding)
+
+<table>
+  <tr>
+    <td><img src="Imgs/BrowserTop1.webp" width="280" alt="BrowserTop (scroll padding) 1"></td>
+    <td><img src="Imgs/BrowserTop2.webp" width="280" alt="BrowserTop (scroll padding) 2"></td>
+  </tr>
+</table>
+
+### 📥 Download Feature Demo (demo01)
+
+<details>
+  <summary>Open demo screenshots</summary>
+  <br>
+  <table>
+    <tr>
+      <td><img src="Imgs/demo01_01.webp" width="240" alt="Download demo 01"></td>
+      <td><img src="Imgs/demo01_02.webp" width="240" alt="Download demo 02"></td>
+      <td><img src="Imgs/demo01_03.webp" width="240" alt="Download demo 03"></td>
+    </tr>
+    <tr>
+      <td><img src="Imgs/demo01_04.webp" width="240" alt="Download demo 04"></td>
+      <td><img src="Imgs/demo01_05.webp" width="240" alt="Download demo 05"></td>
+      <td><img src="Imgs/demo01_06.webp" width="240" alt="Download demo 06"></td>
+    </tr>
+    <tr>
+      <td><img src="Imgs/demo01_07.webp" width="240" alt="Download demo 07"></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</details>
+
+### 📚 Bookmarks / ⚙️ Settings / 💳 Billing
+
+<table>
+  <tr>
+    <td><img src="Imgs/Bookmarks.webp" width="240" alt="Bookmarks"></td>
+    <td><img src="Imgs/Settings.webp" width="240" alt="Settings"></td>
+    <td><img src="Imgs/Billing.webp" width="240" alt="Billing"></td>
+  </tr>
+</table>
+
+## Download Feature
 
 Save videos, audio, and multiple images directly from supported sites.
 
