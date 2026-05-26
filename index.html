@@ -132,8 +132,8 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2 group">
                 <div
-                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
-                    <i data-lucide="moon" class="w-6 h-6 text-white animate-pulse-slow"></i>
+                    class="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr from-purple-600 to-indigo-500 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
+                    <img src="Icons/YoBr_Icon_nena.webp" alt="YorunoBrowser" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span
@@ -747,7 +747,7 @@
                         <div class="absolute inset-0 rounded-3xl blur-2xl bg-purple-500/30 scale-125 transition-all duration-700"
                             id="icon-glow"></div>
                         <div class="relative w-40 h-40 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
-                            <img src="Icons/YoBr_Icon_nena.png" alt="YorunoBrowser Icon"
+                            <img src="Icons/YoBr_Icon_nena.webp" alt="YorunoBrowser Icon"
                                 class="w-full h-full object-cover" id="main-icon-img">
                         </div>
                     </div>
@@ -759,22 +759,22 @@
                         <button onclick="selectIcon(0)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-purple-500 shadow-lg shadow-purple-500/20 transition-all hover:scale-110 active:scale-95"
                             data-index="0">
-                            <img src="Icons/YoBr_Icon_nena.png" alt="nena" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nena.webp" alt="nena" class="w-full h-full object-cover">
                         </button>
                         <button onclick="selectIcon(1)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="1">
-                            <img src="Icons/YoBr_Icon_nenaBlue.png" alt="nenaBlue" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nenaBlue.webp" alt="nenaBlue" class="w-full h-full object-cover">
                         </button>
                         <button onclick="selectIcon(2)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="2">
-                            <img src="Icons/YoBr_Icon_nenaClub.png" alt="nenaClub" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nenaClub.webp" alt="nenaClub" class="w-full h-full object-cover">
                         </button>
                         <button onclick="selectIcon(3)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="3">
-                            <img src="Icons/YoBr_Icon_sea001.png" alt="sea001" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_sea001.webp" alt="sea001" class="w-full h-full object-cover">
                         </button>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-slate-500">
@@ -1152,7 +1152,7 @@
                         </div>
                         <a href="https://altstore.io/" target="_blank"
                             class="w-full py-4.5 rounded-2xl bg-gradient-to-r from-purple-600 to-fuchsia-600 text-center font-bold text-white text-sm block shadow-lg hover:opacity-90 transition-all">
-                            Open AltStore PAL
+                            Open AltStore PAL Registration Page
                         </a>
                     </div>
                 </div>
@@ -1405,10 +1405,10 @@
 
         // --- Premium Icons Showcase Animation Carousel Track Engine ---
         const iconData = [
-            { src: 'Icons/YoBr_Icon_nena.png', name: 'nena', desc: 'Default theme asset icon design variant', glow: 'bg-purple-500/30' },
-            { src: 'Icons/YoBr_Icon_nenaBlue.png', name: 'nenaBlue', desc: 'Bespoke blue color theme structural design', glow: 'bg-blue-500/30' },
-            { src: 'Icons/YoBr_Icon_nenaClub.png', name: 'nenaClub', desc: 'Deep neon club aesthetics design layout look', glow: 'bg-fuchsia-500/30' },
-            { src: 'Icons/YoBr_Icon_sea001.png', name: 'sea001', desc: 'Clean coastal seaside premium style profile', glow: 'bg-cyan-500/30' },
+            { src: 'Icons/YoBr_Icon_nena.webp', name: 'nena', desc: 'Default theme asset icon design variant', glow: 'bg-purple-500/30' },
+            { src: 'Icons/YoBr_Icon_nenaBlue.webp', name: 'nenaBlue', desc: 'Bespoke blue color theme structural design', glow: 'bg-blue-500/30' },
+            { src: 'Icons/YoBr_Icon_nenaClub.webp', name: 'nenaClub', desc: 'Deep neon club aesthetics design layout look', glow: 'bg-fuchsia-500/30' },
+            { src: 'Icons/YoBr_Icon_sea001.webp', name: 'sea001', desc: 'Clean coastal seaside premium style profile', glow: 'bg-cyan-500/30' },
         ];
         let currentIconIdx = 0;
         let iconTimer = null;
