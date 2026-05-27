@@ -135,7 +135,7 @@ Available as a monthly subscription on Patreon.
 | **Supporter** | $100 / mo | Unlimited | ✅ | Color / Icon | DM |
 
 <strong>Recommended: Standard Plan</strong> — All the core features that make this browser great — one-handed operation and more — are available for free. But if you want unlimited video downloads, this is the plan for you. When downloading, you often have to choose between Unknown SD/HD, HLS, and GIF. If you pick wrong, you don't have to wait until tomorrow — no limit means no risk of the video disappearing by the time you come back.
-
+* Only Standard Plan has a free trial for 7 days.
 ---
 
 ## 📲 Installation
