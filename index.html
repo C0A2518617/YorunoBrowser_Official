@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YorunoBrowser - The Ultimate One-Handed Browser & File Manager for Night Owls</title>
+    <meta name="description" content="YorunoBrowser is a premium iOS browser and file manager for one-handed night browsing. Features ad blocker, HLS media downloader, forced dark mode, and proximity stealth sensor.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YorunoBrowser - The Ultimate One-Handed Browser for Night Owls">
+    <meta property="og:description" content="A premium iOS browser fine-tuned for one-handed night browsing. Ad blocker, HLS media downloader, forced dark mode, and proximity stealth sensor built in.">
+    <meta property="og:image" content="Icons/YoBr_Icon_nena.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YorunoBrowser - The Ultimate One-Handed iOS Browser">
+    <meta name="twitter:description" content="One-handed night browsing on iOS. Ad blocker, HLS downloader, forced dark mode, proximity stealth.">
+    <meta name="twitter:image" content="Icons/YoBr_Icon_nena.webp">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,7 +58,8 @@
             }
         }
     </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Pin to a specific version to prevent breaking changes. Verify latest at: https://unpkg.com/lucide/ -->
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -114,7 +124,12 @@
         #main-icon-img {
             transition: opacity 0.18s ease, transform 0.18s ease;
         }
+
+        /* Language switcher */
+        .lang-btn { color: #606078; }
+        .lang-btn.lang-active { color: #c084fc; font-weight: 700; }
     </style>
+    <script src="i18n.js"></script>
 </head>
 
 <body class="bg-night-950 text-slate-100 font-sans overflow-x-hidden antialiased">
@@ -144,17 +159,18 @@
             </a>
 
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#features" class="hover:text-purple-400 transition-colors">Features</a>
-                <a href="#screenshots" class="hover:text-purple-400 transition-colors">Screenshots</a>
-                <a href="#demo" class="hover:text-purple-400 transition-colors">Interactive Demo</a>
-                <a href="#plans" class="hover:text-purple-400 transition-colors">Pricing Plans</a>
-                <a href="#download" class="hover:text-purple-400 transition-colors">Install</a>
+                <a href="#features" class="hover:text-purple-400 transition-colors" data-i18n="nav_features">Features</a>
+                <a href="#screenshots" class="hover:text-purple-400 transition-colors" data-i18n="nav_screenshots">Screenshots</a>
+                <a href="#demo" class="hover:text-purple-400 transition-colors" data-i18n="nav_demo">Interactive Demo</a>
+                <a href="#plans" class="hover:text-purple-400 transition-colors" data-i18n="nav_plans">Pricing Plans</a>
+                <a href="#download" class="hover:text-purple-400 transition-colors" data-i18n="nav_install">Install</a>
             </nav>
 
-            <div>
+            <div class="flex items-center gap-4">
+                <div id="lang-switcher" class="hidden md:flex items-center gap-1 text-[11px] font-bold"></div>
                 <a href="#download"
                     class="relative group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                    <span>Get It Now</span>
+                    <span data-i18n="nav_cta">Get It Now</span>
                     <i data-lucide="download" class="w-4 h-4"></i>
                 </a>
             </div>
@@ -168,17 +184,17 @@
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-wide">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span>The Best One-Handed iOS Browser</span>
+                    <span data-i18n="hero_badge">The Best One-Handed iOS Browser</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                    Make your night browsing<br>
+                    <span data-i18n="hero_h1_1">Make your night browsing</span><br>
                     <span
-                        class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">More
+                        class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent" data-i18n="hero_h1_2">More
                         comfortable & free.</span>
                 </h1>
 
-                <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0" data-i18n="hero_desc">
                     YorunoBrowser is a premium browser and feature-packed file manager fine-tuned for ultimate
                     one-handed operation on iOS. Equipped with a powerful ad blocker, universal media downloader, true
                     forced dark mode, and a clever stealth sensor to protect your privacy instantly.
@@ -187,27 +203,27 @@
                 <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="shield-alert" class="w-4 h-4 text-purple-400"></i> Ad Blocker Included
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-purple-400"></i><span data-i18n="hero_tag_ad"> Ad Blocker Included</span>
                     </span>
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="download-cloud" class="w-4 h-4 text-cyan-400"></i> HLS/MP4 Downloader
+                        <i data-lucide="download-cloud" class="w-4 h-4 text-cyan-400"></i><span data-i18n="hero_tag_dl"> HLS/MP4 Downloader</span>
                     </span>
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="eye-off" class="w-4 h-4 text-pink-400"></i> Instant Proximity Stealth
+                        <i data-lucide="eye-off" class="w-4 h-4 text-pink-400"></i><span data-i18n="hero_tag_stealth"> Instant Proximity Stealth</span>
                     </span>
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i> Fast File Converter
+                        <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i><span data-i18n="hero_tag_conv"> Fast File Converter</span>
                     </span>
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="moon" class="w-4 h-4 text-purple-400"></i> Ultimate Dark Mode
+                        <i data-lucide="moon" class="w-4 h-4 text-purple-400"></i><span data-i18n="hero_tag_dark"> Ultimate Dark Mode</span>
                     </span>
                     <span
                         class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
-                        <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-500"></i> Powerful File Viewer
+                        <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-500"></i><span data-i18n="hero_tag_viewer"> Powerful File Viewer</span>
                     </span>
                 </div>
 
@@ -215,11 +231,11 @@
                     <a href="#download"
                         class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-center shadow-lg shadow-purple-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
                         <i data-lucide="download" class="w-5 h-5"></i>
-                        <span>Install via AltStore</span>
+                        <span data-i18n="hero_btn_install">Install via AltStore</span>
                     </a>
                     <a href="#demo"
                         class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-night-900 hover:bg-night-800 border border-night-800 text-slate-300 font-bold text-center transition-all flex items-center justify-center gap-2">
-                        <span>Try Interactive Demo</span>
+                        <span data-i18n="hero_btn_demo">Try Interactive Demo</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -229,7 +245,7 @@
                 <div class="absolute w-72 h-72 rounded-full bg-purple-500/20 blur-3xl -top-10 -z-10 animate-pulse-slow">
                 </div>
 
-                <div
+                <div aria-hidden="true"
                     class="relative w-[280px] h-[580px] bg-black rounded-[48px] p-3 shadow-2xl border-4 border-slate-800 animate-float">
                     <div
                         class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-full z-30 flex items-center justify-center">
@@ -342,11 +358,10 @@
         <div class="max-w-6xl mx-auto px-4">
 
             <div class="text-center space-y-4 mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Why Choose <span
-                        class="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">YorunoBrowser</span>?
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="feat_heading">
+                    Why Choose YorunoBrowser?
                 </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base" data-i18n="feat_sub">
                     It is far more than just a browser. It is everything you need to explore and consume media smoothly,
                     seamlessly, and securely late at night.
                 </p>
@@ -360,8 +375,8 @@
                         class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="navigation" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">One-Handed & Gesture UI</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat1_title">One-Handed & Gesture UI</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat1_desc">
                         Every main button and URL bar sits right at the bottom for easy reach. Built-in bottom page
                         padding lets you scroll past the display edge comfortably. Customize edge-swipes to navigate
                         backward, forward, or close tabs with effortless gestures.
@@ -374,8 +389,8 @@
                         class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="download-cloud" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">Universal Media Downloader</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat2_title">Universal Media Downloader</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat2_desc">
                         Download HLS (m3u8), MP4 videos, PDFs, and batches of images with a single tap.
                     </p>
                     <div class="mt-4 space-y-2">
@@ -433,8 +448,8 @@
                         class="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="moon" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">True Forced Dark Mode</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat3_title">True Forced Dark Mode</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat3_desc">
                         Instantly transform bright white sites into deeply elegant dark themes. Powered by an smart
                         pre-render engine that blocks blinding white splash screens and avoids unnatural image color
                         inversions.
@@ -447,8 +462,8 @@
                         class="w-12 h-12 rounded-2xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="cpu" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">In-App Media Re-encoder</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat4_title">In-App Media Re-encoder</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat4_desc">
                         Convert and fine-tune your downloaded media directly inside the app. Adjust audio pitch, modify
                         resolution parameters (0.1x to 1.0x), and compress files to optimize local storage.
                     </p>
@@ -474,8 +489,8 @@
                         class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="eye-off" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">Instant Proximity Stealth</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat5_title">Instant Proximity Stealth</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat5_desc">
                         Surfing private stuff when someone suddenly walks into your room? Simply wave your hand over the
                         front camera sensor to instantly mask the active view and pull up a safe page like Wikipedia.
                     </p>
@@ -487,8 +502,8 @@
                         class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="folder-git-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-100 mb-2">Explorer, Grid & YoruTube</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-lg font-bold text-slate-100 mb-2" data-i18n="feat6_title">Explorer, Grid & YoruTube</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat6_desc">
                         Switch smoothly between a desktop-grade list layout and a highly fluid thumbnail grid. Stream
                         unencoded raw .ts segments natively with an optimized one-tap video engine.
                     </p>
@@ -506,7 +521,7 @@
                             class="text-[10px] px-2 py-0.5 rounded-md font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">🔜
                             YoruTube</span>
                     </div>
-                    <p class="mt-3 text-[10px] text-slate-600 leading-relaxed">If you notice anomalies with .ts
+                    <p class="mt-3 text-[10px] text-slate-600 leading-relaxed" data-i18n="feat6_note">If you notice anomalies with .ts
                         durations, please report the Where / When / What / How details on GitHub or via our form.</p>
                 </div>
 
@@ -517,11 +532,11 @@
     <section id="screenshots" class="py-20 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center space-y-4 mb-14">
-                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">SCREENSHOTS</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Real <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">In-App</span> UI
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase" data-i18n="ss_label">SCREENSHOTS</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="ss_heading">
+                    Real In-App UI
                 </h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto" data-i18n="ss_sub">
                     BrowserTop includes extra scroll padding (PaddingForOneHand) so your thumb can scroll comfortably without reaching.
                 </p>
             </div>
@@ -529,19 +544,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <figure class="glass rounded-3xl overflow-hidden border border-slate-800">
                     <div class="bg-night-950/60 flex items-center justify-center p-3">
-                        <img src="Imgs/BrowserTop1.webp" alt="BrowserTop (scroll padding) 1" class="w-full h-auto max-h-[720px] object-contain">
+                        <img src="Imgs/BrowserTop1.webp" alt="BrowserTop (scroll padding) 1" class="w-full h-auto max-h-[720px] object-contain" loading="lazy">
                     </div>
                     <figcaption class="px-5 py-4 text-xs text-slate-400">
-                        <span class="text-slate-200 font-bold">BrowserTop</span> — Scroll padding enabled
+                        <span class="text-slate-200 font-bold">BrowserTop</span> — <span data-i18n="ss1_cap">Scroll padding enabled</span>
                     </figcaption>
                 </figure>
 
                 <figure class="glass rounded-3xl overflow-hidden border border-slate-800">
                     <div class="bg-night-950/60 flex items-center justify-center p-3">
-                        <img src="Imgs/BrowserTop2.webp" alt="BrowserTop (scroll padding) 2" class="w-full h-auto max-h-[720px] object-contain">
+                        <img src="Imgs/BrowserTop2.webp" alt="BrowserTop (scroll padding) 2" class="w-full h-auto max-h-[720px] object-contain" loading="lazy">
                     </div>
                     <figcaption class="px-5 py-4 text-xs text-slate-400">
-                        <span class="text-slate-200 font-bold">BrowserTop</span> — Comfortable thumb zone
+                        <span class="text-slate-200 font-bold">BrowserTop</span> — <span data-i18n="ss2_cap">Comfortable thumb zone</span>
                     </figcaption>
                 </figure>
             </div>
@@ -549,28 +564,28 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                 <figure class="glass rounded-3xl overflow-hidden border border-slate-800">
                     <div class="bg-night-950/60 flex items-center justify-center p-3">
-                        <img src="Imgs/Bookmarks.webp" alt="Bookmarks screen" class="w-full h-auto max-h-[640px] object-contain">
+                        <img src="Imgs/Bookmarks.webp" alt="Bookmarks screen" class="w-full h-auto max-h-[640px] object-contain" loading="lazy">
                     </div>
                     <figcaption class="px-5 py-4 text-xs text-slate-400">
-                        <span class="text-slate-200 font-bold">Bookmarks</span> — My Page
+                        <span class="text-slate-200 font-bold">Bookmarks</span> — <span data-i18n="ss3_cap">My Page</span>
                     </figcaption>
                 </figure>
 
                 <figure class="glass rounded-3xl overflow-hidden border border-slate-800">
                     <div class="bg-night-950/60 flex items-center justify-center p-3">
-                        <img src="Imgs/Settings.webp" alt="Settings screen" class="w-full h-auto max-h-[640px] object-contain">
+                        <img src="Imgs/Settings.webp" alt="Settings screen" class="w-full h-auto max-h-[640px] object-contain" loading="lazy">
                     </div>
                     <figcaption class="px-5 py-4 text-xs text-slate-400">
-                        <span class="text-slate-200 font-bold">Settings</span> — No guesswork descriptions
+                        <span class="text-slate-200 font-bold">Settings</span> — <span data-i18n="ss4_cap">No guesswork descriptions</span>
                     </figcaption>
                 </figure>
 
                 <figure class="glass rounded-3xl overflow-hidden border border-slate-800">
                     <div class="bg-night-950/60 flex items-center justify-center p-3">
-                        <img src="Imgs/Billing.webp" alt="Billing screen" class="w-full h-auto max-h-[640px] object-contain">
+                        <img src="Imgs/Billing.webp" alt="Billing screen" class="w-full h-auto max-h-[640px] object-contain" loading="lazy">
                     </div>
                     <figcaption class="px-5 py-4 text-xs text-slate-400">
-                        <span class="text-slate-200 font-bold">Billing</span> — Plan comparison & usage history
+                        <span class="text-slate-200 font-bold">Billing</span> — <span data-i18n="ss5_cap">Plan comparison & usage history</span>
                     </figcaption>
                 </figure>
             </div>
@@ -578,68 +593,68 @@
             <div class="glass-premium rounded-[32px] p-6 md:p-8 border border-purple-500/20">
                 <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-5">
                     <div class="space-y-1">
-                        <p class="text-purple-300 text-xs font-bold tracking-widest uppercase">DEMO01</p>
-                        <h3 class="text-xl md:text-2xl font-extrabold text-slate-100">Downloader Flow Demo</h3>
-                        <p class="text-slate-400 text-sm">Tap DL → select file → confirm filename/type → execute.</p>
+                        <p class="text-purple-300 text-xs font-bold tracking-widest uppercase" data-i18n="demo01_label">DEMO01</p>
+                        <h3 class="text-xl md:text-2xl font-extrabold text-slate-100" data-i18n="demo01_heading">Downloader Flow Demo</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="demo01_desc">Tap DL → select file → confirm filename/type → execute.</p>
                     </div>
-                    <div class="text-[10px] text-slate-500 font-semibold">Scroll horizontally</div>
+                    <div class="text-[10px] text-slate-500 font-semibold" data-i18n="demo01_scroll">Scroll horizontally</div>
                 </div>
 
                 <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2">
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_01.webp" alt="Download demo step 1" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_01.webp" alt="Download demo step 1" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 1</span> — Open DL</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step1">Step 1</span> — <span data-i18n="step1_cap">Open DL</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_02.webp" alt="Download demo step 2" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_02.webp" alt="Download demo step 2" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 2</span> — Pick target</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step2">Step 2</span> — <span data-i18n="step2_cap">Pick target</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_03.webp" alt="Download demo step 3" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_03.webp" alt="Download demo step 3" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 3</span> — Confirm</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step3">Step 3</span> — <span data-i18n="step3_cap">Confirm</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_04.webp" alt="Download demo step 4" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_04.webp" alt="Download demo step 4" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 4</span> — Execute</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step4">Step 4</span> — <span data-i18n="step4_cap">Execute</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_05.webp" alt="Download demo step 5" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_05.webp" alt="Download demo step 5" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 5</span> — Progress</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step5">Step 5</span> — <span data-i18n="step5_cap">Progress</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_06.webp" alt="Download demo step 6" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_06.webp" alt="Download demo step 6" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 6</span> — Finished</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step6">Step 6</span> — <span data-i18n="step6_cap">Finished</span></div>
                         </div>
                     </div>
                     <div class="snap-start flex-shrink-0 w-64">
                         <div class="glass rounded-2xl overflow-hidden border border-slate-800">
                             <div class="bg-night-950/60 p-2 flex items-center justify-center">
-                                <img src="Imgs/demo01_07.webp" alt="Download demo step 7" class="w-full h-auto max-h-[520px] object-contain">
+                                <img src="Imgs/demo01_07.webp" alt="Download demo step 7" class="w-full h-auto max-h-[520px] object-contain" loading="lazy">
                             </div>
-                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold">Step 7</span> — History</div>
+                            <div class="px-4 py-3 text-xs text-slate-400"><span class="text-slate-200 font-bold" data-i18n="step7">Step 7</span> — <span data-i18n="step7_cap">History</span></div>
                         </div>
                     </div>
                 </div>
@@ -650,11 +665,11 @@
     <section id="demo" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center space-y-4 mb-12">
-                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">INTERACTIVE DEMO</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Experience <span class="text-fuchsia-400">YorunoBrowser</span> Live
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase" data-i18n="idemo_label">INTERACTIVE DEMO</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="idemo_heading">
+                    Experience YorunoBrowser Live
                 </h2>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">
+                <p class="text-slate-400 text-sm max-w-lg mx-auto" data-i18n="idemo_sub">
                     Test drive some of our unique core features right inside your current browser web window!
                 </p>
             </div>
@@ -666,24 +681,24 @@
 
                 <div class="flex border-b border-slate-800 mb-6">
                     <button onclick="switchDemo('hide')" id="btn-demo-hide"
-                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-purple-500 text-purple-300 transition-all">
+                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-purple-500 text-purple-300 transition-all" data-i18n="tab_stealth">
                         🚀 Proximity Stealth
                     </button>
                     <button onclick="switchDemo('dark')" id="btn-demo-dark"
-                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all">
+                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all" data-i18n="tab_dark">
                         🌙 Dark Mode Tweak
                     </button>
                     <button onclick="switchDemo('player')" id="btn-demo-player"
-                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all">
+                        class="flex-1 pb-3 text-center text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all" data-i18n="tab_player">
                         🎬 25% Time Skip
                     </button>
                 </div>
 
                 <div id="demo-hide" class="space-y-6">
-                    <p class="text-slate-300 text-sm leading-relaxed text-center">
+                    <p class="text-slate-300 text-sm leading-relaxed text-center" data-i18n-html="stealth_desc_html">
                         Is someone walking into your room out of nowhere? In the mobile app, just cover the top area of
                         your phone.<br>
-                        Hover or tap the button below to simulate covering the proximity sensor.
+                        <strong class="text-slate-200">PC:</strong> hover the button below. &nbsp;<strong class="text-slate-200">Mobile:</strong> tap to toggle stealth mode.
                     </p>
 
                     <div
@@ -691,10 +706,10 @@
 
                         <div
                             class="bg-night-900 px-4 py-2 border-b border-slate-800 flex justify-between items-center text-[10px]">
-                            <span class="font-bold text-slate-300" id="screen-title">㊙ Viewing Secret Private
+                            <span class="font-bold text-slate-300" id="screen-title" data-i18n="stealth_title_private">㊙ Viewing Secret Private
                                 Content...</span>
                             <span class="text-rose-500 flex items-center gap-1 font-bold animate-pulse"><i
-                                    data-lucide="eye" class="w-3 h-3"></i> PRIVATE</span>
+                                    data-lucide="eye" class="w-3 h-3"></i> <span data-i18n="stealth_badge_private">PRIVATE</span></span>
                         </div>
 
                         <div class="flex-1 p-4 flex flex-col justify-center items-center text-center space-y-2 transition-all duration-300"
@@ -703,20 +718,20 @@
                                 class="w-16 h-16 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-400 mb-2">
                                 <i data-lucide="lock" class="w-8 h-8"></i>
                             </div>
-                            <h4 class="font-bold text-slate-100 text-base">Super_Secret_Video.mp4</h4>
-                            <p class="text-[11px] text-slate-500">Enjoying top secret media content securely...</p>
+                            <h4 class="font-bold text-slate-100 text-base" data-i18n="stealth_video_name">Super_Secret_Video.mp4</h4>
+                            <p class="text-[11px] text-slate-500" data-i18n="stealth_video_cap">Enjoying top secret media content securely...</p>
                         </div>
 
                         <div class="hidden flex-1 p-4 flex flex-col justify-start overflow-y-auto text-left bg-white text-slate-900 transition-all duration-300"
                             id="fake-content">
                             <div class="flex items-center gap-2 border-b pb-2 mb-2">
                                 <span class="font-bold text-slate-800 text-sm">WIKIPEDIA</span>
-                                <span class="text-[9px] bg-slate-200 px-1 text-slate-600 rounded">The Free
+                                <span class="text-[9px] bg-slate-200 px-1 text-slate-600 rounded" data-i18n="stealth_wiki_enc">The Free
                                     Encyclopedia</span>
                             </div>
-                            <h4 class="font-bold text-lg text-slate-900 mb-1 leading-tight">Information Technology (IT)
+                            <h4 class="font-bold text-lg text-slate-900 mb-1 leading-tight" data-i18n="stealth_wiki_heading">Information Technology (IT)
                             </h4>
-                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                            <p class="text-[11px] text-slate-600 leading-relaxed" data-i18n="stealth_wiki_body">
                                 Information technology (IT) is the set of practices and disciplines concerned with
                                 computing, data management, and processing, serving as the core foundation of modern
                                 engineering...
@@ -725,23 +740,22 @@
 
                         <div class="bg-night-900/90 px-4 py-2 border-t border-slate-800 text-[9px] text-slate-500 flex justify-between items-center"
                             id="screen-footer">
-                            <span>URL: https://secret-contents.xyz/video1</span>
-                            <span class="text-slate-400">Secure Mode Active</span>
+                            <span id="screen-footer-url" data-i18n="stealth_url_private">URL: https://secret-contents.xyz/video1</span>
+                            <span data-i18n="stealth_secure">Secure Mode Active</span>
                         </div>
                     </div>
 
                     <div class="flex justify-center pt-2">
                         <button id="trigger-hide" onmouseenter="activateHide()" onmouseleave="deactivateHide()"
-                            ontouchstart="activateHide()" ontouchend="deactivateHide()"
                             class="px-6 py-4 rounded-xl bg-gradient-to-r from-rose-600 to-pink-600 text-white font-bold text-sm shadow-lg shadow-rose-600/20 active:scale-95 transition-all flex items-center gap-2">
                             <i data-lucide="hand" class="w-5 h-5 animate-bounce"></i>
-                            <span>Cover Sensor Here (Hover / Tap and Hold)</span>
+                            <span id="trigger-hide-label">Cover Sensor Here (Hover / Tap to Toggle)</span>
                         </button>
                     </div>
                 </div>
 
                 <div id="demo-dark" class="hidden space-y-6">
-                    <p class="text-slate-300 text-sm leading-relaxed text-center">
+                    <p class="text-slate-300 text-sm leading-relaxed text-center" data-i18n-html="dark_desc_html">
                         Ever opened a web browser in the middle of the night and yelled because of a flashing white
                         page?<br>
                         With YorunoBrowser, forced dark mode takes effect before rendering, keeping assets intact
@@ -752,15 +766,15 @@
                         id="demo-dark-screen">
                         <div class="px-4 py-2 flex justify-between items-center text-[10px] border-b border-slate-200"
                             id="demo-dark-header">
-                            <span class="font-bold text-slate-700">A Regular Informative Blog</span>
-                            <span class="text-slate-400 font-bold">Standard Web</span>
+                            <span class="font-bold text-slate-700" data-i18n="dark_blog_name">A Regular Informative Blog</span>
+                            <span class="text-slate-400 font-bold" data-i18n="dark_blog_type">Standard Web</span>
                         </div>
 
                         <div class="flex-1 p-4 flex flex-col justify-between" id="demo-dark-body">
                             <div class="space-y-2">
-                                <h4 class="font-bold text-slate-900 text-base" id="demo-dark-title">Blinding White
+                                <h4 class="font-bold text-slate-900 text-base" id="demo-dark-title" data-i18n="dark_content_title">Blinding White
                                     Nighttime Content</h4>
-                                <p class="text-[11px] text-slate-600 leading-normal" id="demo-dark-text">
+                                <p class="text-[11px] text-slate-600 leading-normal" id="demo-dark-text" data-i18n="dark_content_text">
                                     Standard forced filters usually invert every element on screen, transforming
                                     standard illustrations into weird and spooky negative colors...
                                 </p>
@@ -773,28 +787,28 @@
                                     🐱
                                 </div>
                                 <div class="text-[10px]">
-                                    <p class="font-bold text-slate-800" id="demo-dark-card-title">Cute Cat Asset Icon
+                                    <p class="font-bold text-slate-800" id="demo-dark-card-title" data-i18n="dark_card_title">Cute Cat Asset Icon
                                     </p>
-                                    <p class="text-slate-500" id="demo-dark-card-sub">(Should NOT be color-inverted)</p>
+                                    <p class="text-slate-500" id="demo-dark-card-sub" data-i18n="dark_card_sub_off">(Should NOT be color-inverted)</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex justify-center items-center gap-4">
-                        <span class="text-sm font-semibold text-slate-400">Default View (Bright)</span>
+                        <span class="text-sm font-semibold text-slate-400" data-i18n="dark_label_off">Default View (Bright)</span>
                         <button onclick="toggleDarkModeDemo()"
                             class="w-14 h-8 bg-slate-700 rounded-full p-1 transition-all flex items-center"
                             id="demo-dark-switch-btn">
                             <div class="w-6 h-6 bg-white rounded-full transition-all shadow-md transform"
                                 id="demo-dark-switch-knob"></div>
                         </button>
-                        <span class="text-sm font-semibold text-purple-400">Yoruno Forced Dark View</span>
+                        <span class="text-sm font-semibold text-purple-400" data-i18n="dark_label_on">Yoruno Forced Dark View</span>
                     </div>
                 </div>
 
                 <div id="demo-player" class="hidden space-y-6">
-                    <p class="text-slate-300 text-sm leading-relaxed text-center">
+                    <p class="text-slate-300 text-sm leading-relaxed text-center" data-i18n-html="player_desc_html">
                         Ever browsed in bed and struggled to drag the tiny progress slider at the edge with your
                         thumb?<br>
                         Our instant quarter-jump keys make skipping through long videos effortless with just one hand.
@@ -829,21 +843,21 @@
                         </div>
 
                         <div class="space-y-3">
-                            <p class="text-slate-400 text-[10px] text-center font-semibold">Try moving the seek bar
+                            <p class="text-slate-400 text-[10px] text-center font-semibold" data-i18n="player_seek_hint">Try moving the seek bar
                                 slider track above</p>
                             <div class="flex flex-col items-center gap-2 min-h-[52px] justify-center">
                                 <button onclick="setPlayerPercent(25)" id="jump25-btn"
                                     class="flex items-center gap-2 px-7 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm shadow-lg shadow-purple-600/20 hover:opacity-90 active:scale-95 transition-all">
-                                    <i data-lucide="skip-forward" class="w-4 h-4"></i> Jump to 25%
+                                    <i data-lucide="skip-forward" class="w-4 h-4"></i> <span data-i18n="player_jump_btn">Jump to 25%</span>
                                 </button>
-                                <p id="jump25-passed" class="hidden text-xs text-slate-500">Video past 25%. Jump button
+                                <p id="jump25-passed" class="hidden text-xs text-slate-500" data-i18n="player_passed">Video past 25%. Jump button
                                     hidden dynamically.</p>
                             </div>
                             <div class="flex justify-between text-[11px] text-slate-400 px-1">
                                 <span class="flex items-center gap-1 cursor-pointer hover:text-purple-400"
                                     onclick="setPlayerPercent(0)"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-                                    Restart Video</span>
-                                <span class="text-slate-500">Button appears only when position is under 25%</span>
+                                    <span data-i18n="player_restart">Restart Video</span></span>
+                                <span class="text-slate-500" data-i18n="player_hint">Button appears only when position is under 25%</span>
                             </div>
                         </div>
                     </div>
@@ -862,13 +876,11 @@
 
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center space-y-4 mb-16">
-                <span class="text-fuchsia-400 text-xs font-bold tracking-widest uppercase">PREMIUM EXCLUSIVE</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Personalized <span
-                        class="bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">Icons &
-                        Themes</span>
+                <span class="text-fuchsia-400 text-xs font-bold tracking-widest uppercase" data-i18n="sub_label">PREMIUM EXCLUSIVE</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="sub_heading">
+                    Personalized Icons & Themes
                 </h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto" data-i18n="sub_desc">
                     Unlock full custom app icon sets and bespoke accent color layouts with our Premium or Supporter
                     tiers. Customize your home screen experience to fit your exact style.
                 </p>
@@ -882,38 +894,38 @@
                             id="icon-glow"></div>
                         <div class="relative w-40 h-40 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
                             <img src="Icons/YoBr_Icon_nena.webp" alt="YorunoBrowser Icon"
-                                class="w-full h-full object-cover" id="main-icon-img">
+                                class="w-full h-full object-cover" id="main-icon-img" loading="lazy">
                         </div>
                     </div>
                     <div class="text-center space-y-1">
                         <p class="font-bold text-slate-200 text-sm" id="icon-name">nena</p>
-                        <p class="text-xs text-slate-500" id="icon-desc">Default variant theme icon asset</p>
+                        <p class="text-xs text-slate-500" id="icon-desc" data-i18n="icon_nena_desc">Default variant theme icon asset</p>
                     </div>
                     <div class="flex gap-4">
                         <button onclick="selectIcon(0)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-purple-500 shadow-lg shadow-purple-500/20 transition-all hover:scale-110 active:scale-95"
                             data-index="0">
-                            <img src="Icons/YoBr_Icon_nena.webp" alt="nena" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nena.webp" alt="nena" class="w-full h-full object-cover" loading="lazy">
                         </button>
                         <button onclick="selectIcon(1)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="1">
-                            <img src="Icons/YoBr_Icon_nenaBlue.webp" alt="nenaBlue" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nenaBlue.webp" alt="nenaBlue" class="w-full h-full object-cover" loading="lazy">
                         </button>
                         <button onclick="selectIcon(2)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="2">
-                            <img src="Icons/YoBr_Icon_nenaClub.webp" alt="nenaClub" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_nenaClub.webp" alt="nenaClub" class="w-full h-full object-cover" loading="lazy">
                         </button>
                         <button onclick="selectIcon(3)"
                             class="icon-thumb-btn w-14 h-14 rounded-2xl overflow-hidden border-2 border-transparent transition-all hover:scale-110 active:scale-95"
                             data-index="3">
-                            <img src="Icons/YoBr_Icon_sea001.webp" alt="sea001" class="w-full h-full object-cover">
+                            <img src="Icons/YoBr_Icon_sea001.webp" alt="sea001" class="w-full h-full object-cover" loading="lazy">
                         </button>
                     </div>
                     <div class="flex items-center gap-2 text-xs text-slate-500">
                         <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400 animate-ping"></span>
-                        <span>Auto-cycling preview loop active</span>
+                        <span data-i18n="icon_loop">Auto-cycling preview loop active</span>
                     </div>
                 </div>
 
@@ -924,11 +936,11 @@
                                 <i data-lucide="image" class="w-5 h-5 text-fuchsia-400"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-100">Custom Home Icons</h3>
-                                <span class="text-[10px] text-fuchsia-400 font-semibold">Premium / Supporter Only</span>
+                                <h3 class="font-bold text-slate-100" data-i18n="ci_title">Custom Home Icons</h3>
+                                <span class="text-[10px] text-fuchsia-400 font-semibold" data-i18n="ci_tier">Premium / Supporter Only</span>
                             </div>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed">
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ci_desc">
                             Personalize your home screen app display configurations with bespoke icon artwork variants
                             including nena, nenaBlue, nenaClub, and sea001.
                         </p>
@@ -953,11 +965,11 @@
                                 <i data-lucide="palette" class="w-5 h-5 text-purple-400"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-100">Bespoke Accent Themes</h3>
-                                <span class="text-[10px] text-purple-400 font-semibold">Premium / Supporter Only</span>
+                                <h3 class="font-bold text-slate-100" data-i18n="ct_title">Bespoke Accent Themes</h3>
+                                <span class="text-[10px] text-purple-400 font-semibold" data-i18n="ct_tier">Premium / Supporter Only</span>
                             </div>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed">
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="ct_desc">
                             Tweak app-wide accent markers to match your mood. Toggle beautifully deep custom variations
                             of violet, dark cyan, pink, and emerald green.
                         </p>
@@ -982,19 +994,19 @@
                                     class="w-6 h-6 rounded-full bg-cyan-500 hover:ring-2 hover:ring-cyan-400 hover:ring-offset-2 hover:ring-offset-night-950 transition-all cursor-pointer">
                                 </div>
                             </div>
-                            <span class="text-[10px] text-slate-500">6+ colors available (updated regularly)</span>
+                            <span class="text-[10px] text-slate-500" data-i18n="colors_label">6+ colors available (updated regularly)</span>
                         </div>
                     </div>
 
                     <div class="glass-premium p-5 rounded-2xl flex items-center justify-between gap-4">
                         <div class="space-y-0.5">
-                            <p class="font-bold text-fuchsia-300 text-sm">Unlock with Premium Tier</p>
-                            <p class="text-xs text-slate-400">From $20/mo • Custom Assets, Themes, and Private Discord
+                            <p class="font-bold text-fuchsia-300 text-sm" data-i18n="unlock_title">Unlock with Premium Tier</p>
+                            <p class="text-xs text-slate-400" data-i18n="unlock_desc">From $20/mo • Custom Assets, Themes, and Private Discord
                                 DM Perks</p>
                         </div>
                         <a href="#plans"
                             class="flex-shrink-0 px-4 py-2 rounded-xl bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white text-xs font-bold shadow-lg shadow-fuchsia-600/20 hover:opacity-90 transition-all">
-                            View Plans
+                            <span data-i18n="view_plans">View Plans</span>
                         </a>
                     </div>
                 </div>
@@ -1009,12 +1021,11 @@
 
         <div class="max-w-5xl mx-auto px-4">
             <div class="text-center space-y-4 mb-14">
-                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">WHY $1 / MONTH</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Why <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Only $1
-                        / Month</span> is Absolute Value
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase" data-i18n="why_label">WHY $1 / MONTH</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="why_heading">
+                    Why Only $1 / Month is Absolute Value
                 </h2>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">
+                <p class="text-slate-400 text-sm max-w-lg mx-auto" data-i18n="why_sub">
                     Instead of worrying about a daily download limit, explore with zero boundaries.
                 </p>
             </div>
@@ -1024,9 +1035,9 @@
                 <div class="glass p-6 rounded-3xl space-y-4">
                     <div class="flex items-center gap-2 mb-1">
                         <i data-lucide="list" class="w-4 h-4 text-cyan-400"></i>
-                        <h3 class="font-bold text-slate-100 text-sm">The Reality of Modern Web Media Streams</h3>
+                        <h3 class="font-bold text-slate-100 text-sm" data-i18n="reality_title">The Reality of Modern Web Media Streams</h3>
                     </div>
-                    <p class="text-slate-400 text-xs leading-relaxed">
+                    <p class="text-slate-400 text-xs leading-relaxed" data-i18n="reality_desc">
                         When you tap a media stream link on video sites, multiple cryptic assets often populate. Knowing
                         which link holds the actual high-res video varies across sites.
                     </p>
@@ -1065,7 +1076,7 @@
                             <span class="text-rose-600 text-[10px]">Banner Ad</span>
                         </div>
                     </div>
-                    <p class="text-slate-500 text-[11px] leading-relaxed border-t border-slate-800 pt-3">
+                    <p class="text-slate-500 text-[11px] leading-relaxed border-t border-slate-800 pt-3" data-i18n-html="reality_note_html">
                         In many scenarios, options labeled "Unknown HD" are the correct ones. No software can predict
                         this perfectly; <strong class="text-slate-400">users discover it through brief trial and
                             error.</strong> For example, picking HLS right after starting playback works best on
@@ -1077,64 +1088,62 @@
                 <div class="space-y-4 flex flex-col justify-center">
                     <div class="glass p-5 rounded-2xl border-l-4 border-slate-700 space-y-3">
                         <div class="flex items-center gap-3">
-                            <span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs font-bold">FREE
-                                TIER</span>
-                            <span class="text-slate-300 font-bold text-sm">10 Downloads / Day Limit</span>
+                            <span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs font-bold" data-i18n="free_label">FREE TIER</span>
+                            <span class="text-slate-300 font-bold text-sm" data-i18n="free_title">10 Downloads / Day Limit</span>
                         </div>
-                        <p class="text-slate-400 text-sm leading-relaxed">If a media node provides 5 stream candidates,
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="free_desc">If a media node provides 5 stream candidates,
                             testing two wrong nodes leaves you with few daily chances, adding unnecessary stress to your
                             browsing experience.</p>
                         <div class="flex items-center gap-2 text-rose-400 text-xs font-semibold">
                             <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
-                            If you miss the right track, you have to wait until tomorrow
+                            <span data-i18n="free_warning">If you miss the right track, you have to wait until tomorrow</span>
                         </div>
                     </div>
 
                     <div class="glass-premium p-5 rounded-2xl border-l-4 border-purple-500 space-y-3">
                         <div class="flex items-center gap-3">
-                            <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold">$1
-                                / MONTH</span>
-                            <span class="text-purple-300 font-bold text-sm">Infinite Unlimited Access</span>
+                            <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold" data-i18n="std_label">$1 / MONTH</span>
+                            <span class="text-purple-300 font-bold text-sm" data-i18n="std_title">Infinite Unlimited Access</span>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed">Test every stream asset link freely with zero
+                        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="std_desc">Test every stream asset link freely with zero
                             worry. Zero stress, maximum convenience, and instant access to the files you want.</p>
                         <div class="flex items-center gap-2 text-emerald-400 text-xs font-semibold">
                             <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-                            Test everything seamlessly to lock down the correct file path
+                            <span data-i18n="std_benefit">Test everything seamlessly to lock down the correct file path</span>
                         </div>
                     </div>
 
-                    <p class="text-slate-500 text-xs text-center">Why stress over daily limitations when you can clear
+                    <p class="text-slate-500 text-xs text-center" data-i18n="why_closing">Why stress over daily limitations when you can clear
                         all boundaries for just $1?</p>
                 </div>
             </div>
 
             <div class="glass-premium p-6 md:p-8 rounded-3xl text-center space-y-6">
-                <p class="text-slate-400 text-xs tracking-widest uppercase font-semibold">Let's look at standard
+                <p class="text-slate-400 text-xs tracking-widest uppercase font-semibold" data-i18n="compare_label">Let's look at standard
                     industry pricing scales...</p>
                 <div class="flex items-center justify-center gap-6 md:gap-12 flex-wrap">
                     <div class="text-center space-y-1 opacity-60">
-                        <p class="text-slate-400 text-xs">Standard ChatGPT / Claude Pro Plans</p>
+                        <p class="text-slate-400 text-xs" data-i18n="compare_ai_label">Standard ChatGPT / Claude Pro Plans</p>
                         <p class="text-4xl font-extrabold text-slate-300">$20<span
                                 class="text-base font-normal text-slate-500"> /mo</span></p>
                     </div>
                     <div class="text-slate-600 font-bold text-2xl">vs</div>
                     <div class="text-center space-y-1">
-                        <p class="text-purple-400 text-xs font-bold tracking-wide">YorunoBrowser Standard Tier</p>
+                        <p class="text-purple-400 text-xs font-bold tracking-wide" data-i18n="compare_yoruno_label">YorunoBrowser Standard Tier</p>
                         <p
                             class="text-6xl font-extrabold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                             $1<span class="text-xl font-normal text-slate-400"> /mo</span></p>
                     </div>
                 </div>
-                <p class="text-slate-300 text-base font-semibold">
+                <p class="text-slate-300 text-base font-semibold" data-i18n-html="compare_desc_html">
                     Get an enhanced browsing experience for just <span class="text-purple-300 font-bold">1/20th the
                         price</span> of a monthly AI subscription.
                 </p>
-                <p class="text-slate-500 text-xs max-w-sm mx-auto">Think about it: if your regular AI tools cost $20,
+                <p class="text-slate-500 text-xs max-w-sm mx-auto" data-i18n="compare_sub">Think about it: if your regular AI tools cost $20,
                     this premium layout sits at a tiny fraction of that amount.</p>
                 <a href="#plans"
                     class="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm shadow-lg shadow-purple-600/20 hover:opacity-90 active:scale-95 transition-all">
-                    Choose Standard Plan
+                    <span data-i18n="choose_standard">Choose Standard Plan</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
@@ -1145,9 +1154,9 @@
         <div class="max-w-6xl mx-auto px-4">
 
             <div class="text-center space-y-4 mb-16">
-                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">PRICING PLANS</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Pick a Plan That Fits Your Flow</h2>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase" data-i18n="plans_label">PRICING PLANS</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="plans_heading">Pick a Plan That Fits Your Flow</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto" data-i18n="plans_desc">
                     Enjoy up to 10 daily media downloads for free, or support development via Patreon to unlock infinite
                     downloads and advanced file converter layouts.
                 </p>
@@ -1157,64 +1166,64 @@
                 <table class="w-full text-left border-collapse min-w-[700px]">
                     <thead>
                         <tr class="border-b border-slate-800 bg-night-900/60 text-slate-300 font-bold text-sm">
-                            <th class="p-5">Tier Plan</th>
-                            <th class="p-5">Pricing Matrix</th>
-                            <th class="p-5">Media Downloads</th>
-                            <th class="p-5">File Convert & Re-encode</th>
-                            <th class="p-5">Custom Themes / Icons</th>
-                            <th class="p-5">Discord VIP Access Perks</th>
+                            <th class="p-5" data-i18n="table_tier">Tier Plan</th>
+                            <th class="p-5" data-i18n="table_price">Pricing Matrix</th>
+                            <th class="p-5" data-i18n="table_dl">Media Downloads</th>
+                            <th class="p-5" data-i18n="table_conv">File Convert & Re-encode</th>
+                            <th class="p-5" data-i18n="table_themes">Custom Themes / Icons</th>
+                            <th class="p-5" data-i18n="table_discord">Discord VIP Access Perks</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-900 text-slate-300 text-sm">
                         <tr class="hover:bg-slate-900/20 transition-colors">
                             <td class="p-5 font-bold text-slate-200 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Free
+                                <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> <span data-i18n="t_free">Free</span>
                             </td>
                             <td class="p-5 font-mono text-slate-400">0 USD <span
                                     class="text-[11px] text-slate-500">/mo</span></td>
-                            <td class="p-5">10 DLs / Day Limit</td>
+                            <td class="p-5" data-i18n="dl_limited">10 DLs / Day Limit</td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                         </tr>
                         <tr class="hover:bg-slate-900/20 transition-colors bg-purple-950/5">
                             <td class="p-5 font-bold text-purple-300 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> Standard
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span> <span data-i18n="t_standard">Standard</span>
                             </td>
                             <td class="p-5 font-mono text-purple-400 font-bold">1 USD <span
                                     class="text-[11px] text-slate-500">/mo</span></td>
-                            <td class="p-5 text-emerald-400 font-semibold">Unlimited (Inf)</td>
+                            <td class="p-5 text-emerald-400 font-semibold" data-i18n="dl_unlimited">Unlimited (Inf)</td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                         </tr>
                         <tr class="hover:bg-slate-900/20 transition-colors">
                             <td class="p-5 font-bold text-cyan-300 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Pro
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> <span data-i18n="t_pro">Pro</span>
                             </td>
                             <td class="p-5 font-mono text-cyan-400 font-bold">5 USD <span
                                     class="text-[11px] text-slate-500">/mo</span></td>
                             <td class="p-5 text-emerald-400 font-semibold">Unlimited (Inf)</td>
                             <td class="p-5 text-emerald-400"><i data-lucide="check"
-                                    class="w-4 h-4 text-emerald-400 inline"></i> Unlocked (O)</td>
+                                    class="w-4 h-4 text-emerald-400 inline"></i> <span data-i18n="conv_unlocked">Unlocked (O)</span></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                             <td class="p-5 text-slate-500"><i data-lucide="x" class="w-4 h-4 text-rose-500"></i></td>
                         </tr>
                         <tr class="hover:bg-slate-900/20 transition-colors bg-fuchsia-950/10">
                             <td class="p-5 font-bold text-fuchsia-300 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-fuchsia-400 animate-pulse"></span> Premium
+                                <span class="w-2.5 h-2.5 rounded-full bg-fuchsia-400 animate-pulse"></span> <span data-i18n="t_premium">Premium</span>
                             </td>
                             <td class="p-5 font-mono text-fuchsia-400 font-bold">20 USD <span
                                     class="text-[11px] text-slate-500">/mo</span></td>
                             <td class="p-5 text-emerald-400 font-semibold">Unlimited (Inf)</td>
                             <td class="p-5 text-emerald-400"><i data-lucide="check"
                                     class="w-4 h-4 text-emerald-400 inline"></i> Unlocked (O)</td>
-                            <td class="p-5 text-fuchsia-400 font-medium">Color / Icon Customization</td>
-                            <td class="p-5 text-slate-200">Direct VIP DM Channel Support</td>
+                            <td class="p-5 text-fuchsia-400 font-medium" data-i18n="theme_color_icon">Color / Icon Customization</td>
+                            <td class="p-5 text-slate-200" data-i18n="discord_vip">Direct VIP DM Channel Support</td>
                         </tr>
                         <tr class="hover:bg-slate-900/20 transition-colors">
                             <td class="p-5 font-bold text-yellow-300 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-ping"></span> Supporter
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-ping"></span> <span data-i18n="t_supporter">Supporter</span>
                             </td>
                             <td class="p-5 font-mono text-yellow-400 font-bold">100 USD <span
                                     class="text-[11px] text-slate-500">/mo</span></td>
@@ -1229,11 +1238,11 @@
             </div>
 
             <div class="mt-6 text-center space-y-1">
-                <p class="text-slate-500 text-xs">* Media downloader does not bypass DRM (Digital Rights Management)
+                <p class="text-slate-500 text-xs" data-i18n="note1">* Media downloader does not bypass DRM (Digital Rights Management)
                     encryptions on streaming structures.</p>
-                <p class="text-slate-500 text-xs">* Media extraction dependencies depend on external site layouts and
+                <p class="text-slate-500 text-xs" data-i18n="note2">* Media extraction dependencies depend on external site layouts and
                     may vary over time.</p>
-                <p class="text-slate-500 text-xs">* Subscriptions run through Patreon securely. Check billing ledger
+                <p class="text-slate-500 text-xs" data-i18n="note3">* Subscriptions run through Patreon securely. Check billing ledger
                     allocations inside your app's built-in parameters page smoothly.</p>
             </div>
 
@@ -1244,9 +1253,9 @@
         <div class="max-w-5xl mx-auto px-4">
 
             <div class="text-center space-y-4 mb-16">
-                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">INSTALLATION</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Deploy Natively to Your iOS Device</h2>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase" data-i18n="inst_label">INSTALLATION</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="inst_heading">Deploy Natively to Your iOS Device</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto" data-i18n="inst_desc">
                     YorunoBrowser code targets open-source public spaces on GitHub. Sideload via AltStore or your
                     preferred iOS package management tools seamlessly.
                 </p>
@@ -1259,12 +1268,12 @@
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
                             <span
-                                class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold">Recommended
+                                class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold" data-i18n="pal_badge">Recommended
                                 for JP & EU</span>
                             <i data-lucide="smartphone" class="w-6 h-6 text-purple-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-100">AltStore PAL</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-bold text-slate-100" data-i18n="pal_title">AltStore PAL</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="pal_desc">
                             For users on iOS 17.4+ within supported marketplace ecosystems. Install, sync, and process
                             version updates cleanly with single-tap store mechanics.
                         </p>
@@ -1272,21 +1281,21 @@
                     <div class="space-y-3">
                         <button onclick="toggleAccordion('guide-pal')"
                             class="w-full text-left text-xs text-purple-300 hover:text-purple-200 flex items-center justify-between border-t border-slate-800 pt-4">
-                            <span>View Installation Guide Steps</span>
+                            <span data-i18n="pal_guide_btn">View Installation Guide Steps</span>
                             <i data-lucide="chevron-down" class="w-4 h-4" id="guide-pal-icon"></i>
                         </button>
                         <div id="guide-pal"
                             class="hidden text-xs text-slate-400 space-y-2 bg-night-950/80 p-3 rounded-xl border border-slate-900 transition-all">
-                            <p>1. Open Safari on iOS, navigate to the official AltStore PAL marketplace link, register,
+                            <p data-i18n="pal_step1">1. Open Safari on iOS, navigate to the official AltStore PAL marketplace link, register,
                                 and install the store app hub.</p>
-                            <p>2. Open the AltStore PAL app on your phone, then add the official YorunoBrowser GitHub
+                            <p data-i18n="pal_step2">2. Open the AltStore PAL app on your phone, then add the official YorunoBrowser GitHub
                                 Repository URL link into your active sources panel.</p>
-                            <p>3. Find YorunoBrowser in the app listings and tap install to set everything up natively!
+                            <p data-i18n="pal_step3">3. Find YorunoBrowser in the app listings and tap install to set everything up natively!
                             </p>
                         </div>
                         <a href="https://altstore.io/" target="_blank"
                             class="w-full py-4.5 rounded-2xl bg-gradient-to-r from-purple-600 to-fuchsia-600 text-center font-bold text-white text-sm block shadow-lg hover:opacity-90 transition-all">
-                            Open AltStore PAL Registration Page
+                            <span data-i18n="pal_cta">Open AltStore PAL Registration Page</span>
                         </a>
                     </div>
                 </div>
@@ -1294,12 +1303,12 @@
                 <div class="glass p-8 rounded-3xl flex flex-col justify-between space-y-6">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold">Global
+                            <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold" data-i18n="srv_badge">Global
                                 Route • Computer Needed</span>
                             <i data-lucide="laptop" class="w-6 h-6 text-cyan-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-100">AltServer (AltStore Free)</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-bold text-slate-100" data-i18n="srv_title">AltServer (AltStore Free)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="srv_desc">
                             Deploy your app safely from any global location for free using a Windows or macOS desktop
                             environment over local Wi-Fi or tether links.
                         </p>
@@ -1307,22 +1316,22 @@
                     <div class="space-y-3">
                         <button onclick="toggleAccordion('guide-server')"
                             class="w-full text-left text-xs text-cyan-300 hover:text-cyan-200 flex items-center justify-between border-t border-slate-800 pt-4">
-                            <span>View Installation Guide Steps</span>
+                            <span data-i18n="srv_guide_btn">View Installation Guide Steps</span>
                             <i data-lucide="chevron-down" class="w-4 h-4" id="guide-server-icon"></i>
                         </button>
                         <div id="guide-server"
                             class="hidden text-xs text-slate-400 space-y-2 bg-night-950/80 p-3 rounded-xl border border-slate-900 transition-all">
-                            <p>1. Download and open the AltServer tool client framework components natively inside a
+                            <p data-i18n="srv_step1">1. Download and open the AltServer tool client framework components natively inside a
                                 Windows or macOS system configuration.</p>
-                            <p>2. Attach your iPhone via USB cable, locate AltServer in your system menu bar tray, and
+                            <p data-i18n="srv_step2">2. Attach your iPhone via USB cable, locate AltServer in your system menu bar tray, and
                                 run "Install AltStore" onto your targeted phone target.</p>
-                            <p>3. Grab our latest stable IPA release package binary from the official GitHub workspace,
+                            <p data-i18n="srv_step3">3. Grab our latest stable IPA release package binary from the official GitHub workspace,
                                 launch AltStore on mobile, and click the "+" button under My Apps to build it locally.
                             </p>
                         </div>
                         <a href="https://altstore.io/" target="_blank"
                             class="w-full py-4.5 rounded-2xl bg-night-900 border border-slate-800 text-center font-bold text-slate-300 text-sm block hover:bg-slate-800 transition-all">
-                            Download AltServer (Free)
+                            <span data-i18n="srv_cta">Download AltServer (Free)</span>
                         </a>
                     </div>
                 </div>
@@ -1332,15 +1341,15 @@
             <div class="glass max-w-xl mx-auto p-6 rounded-3xl text-center space-y-4">
                 <div class="flex items-center justify-center gap-3">
                     <i data-lucide="github" class="w-6 h-6 text-slate-400"></i>
-                    <h4 class="font-bold text-slate-200">Official GitHub Workspace</h4>
+                    <h4 class="font-bold text-slate-200" data-i18n="gh_title">Official GitHub Workspace</h4>
                 </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <p class="text-xs text-slate-400 leading-relaxed" data-i18n="gh_desc">
                     Track public engineering milestones, code tweaks, issue diagnostics pipelines, and feature update
                     roadmaps (including the upcoming YoruTube module integrations).
                 </p>
                 <a href="https://github.com/C0A2518617/YorunoBrowser_Official" target="_blank"
                     class="inline-flex items-center gap-2 text-xs text-purple-400 hover:text-purple-300 font-bold">
-                    <span>Open GitHub Official Repository</span>
+                    <span data-i18n="gh_cta">Open GitHub Official Repository</span>
                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                 </a>
             </div>
@@ -1358,15 +1367,15 @@
                 <span class="font-bold text-slate-300 tracking-wider">YorunoBrowser Project</span>
             </div>
 
-            <p class="text-center md:text-left">
+            <p class="text-center md:text-left" data-i18n="footer_copy">
                 © 2026 YorunoBrowser. Developed under the night sky. All rights reserved.
             </p>
 
             <div class="flex items-center gap-6">
-                <a href="https://patreon.com" target="_blank" class="hover:text-fuchsia-400 transition-colors">Support
+                <a href="https://patreon.com" target="_blank" class="hover:text-fuchsia-400 transition-colors" data-i18n="footer_patreon">Support
                     on Patreon</a>
-                <a href="#plans" class="hover:text-purple-400 transition-colors">Pricing Plans</a>
-                <a href="https://github.com" target="_blank" class="hover:text-slate-300 transition-colors">GitHub</a>
+                <a href="#plans" class="hover:text-purple-400 transition-colors" data-i18n="footer_plans">Pricing Plans</a>
+                <a href="https://github.com" target="_blank" class="hover:text-slate-300 transition-colors" data-i18n="footer_github">GitHub</a>
             </div>
         </div>
     </footer>
@@ -1416,28 +1425,24 @@
         }
 
         // --- Proximity Stealth Simulation Mechanics Logic ---
-        function activateHide() {
-            const screenTitle = document.getElementById('screen-title');
-            const privateContent = document.getElementById('private-content');
-            const fakeContent = document.getElementById('fake-content');
-            const screenFooter = document.getElementById('screen-footer');
+        function _t(key) {
+            const lang = document.documentElement.lang || 'en';
+            return (typeof translations !== 'undefined' && translations[lang] && translations[lang][key])
+                ? translations[lang][key] : key;
+        }
 
-            screenTitle.innerText = "🔍 Information Technology - Wikipedia";
-            privateContent.classList.add('hidden');
-            fakeContent.classList.remove('hidden');
-            screenFooter.innerText = "URL: https://en.wikipedia.org/wiki/Information_technology";
+        function activateHide() {
+            document.getElementById('screen-title').innerText = _t('stealth_title_wiki');
+            document.getElementById('private-content').classList.add('hidden');
+            document.getElementById('fake-content').classList.remove('hidden');
+            document.getElementById('screen-footer-url').innerText = _t('stealth_url_wiki');
         }
 
         function deactivateHide() {
-            const screenTitle = document.getElementById('screen-title');
-            const privateContent = document.getElementById('private-content');
-            const fakeContent = document.getElementById('fake-content');
-            const screenFooter = document.getElementById('screen-footer');
-
-            screenTitle.innerText = "㊙ Viewing Secret Private Content...";
-            privateContent.classList.remove('hidden');
-            fakeContent.classList.add('hidden');
-            screenFooter.innerText = "URL: https://secret-contents.xyz/video1";
+            document.getElementById('screen-title').innerText = _t('stealth_title_private');
+            document.getElementById('private-content').classList.remove('hidden');
+            document.getElementById('fake-content').classList.add('hidden');
+            document.getElementById('screen-footer-url').innerText = _t('stealth_url_private');
         }
 
         // --- Forced Dark Mode Simulation Demo Logic ---
@@ -1475,7 +1480,7 @@
                 cardTitle.classList.remove('text-slate-800');
 
                 cardSub.classList.add('text-slate-500');
-                cardSub.innerText = "(Colors stay intact without inversion!)";
+                cardSub.innerText = _t('dark_card_sub_on');
 
                 switchBtn.classList.add('bg-purple-600');
                 switchBtn.classList.remove('bg-slate-700');
@@ -1500,7 +1505,7 @@
                 cardTitle.classList.remove('text-slate-200');
                 cardTitle.classList.add('text-slate-800');
 
-                cardSub.innerText = "(Should NOT be color-inverted)";
+                cardSub.innerText = _t('dark_card_sub_off');
 
                 switchBtn.classList.remove('bg-purple-600');
                 switchBtn.classList.add('bg-slate-700');
@@ -1539,10 +1544,10 @@
 
         // --- Premium Icons Showcase Animation Carousel Track Engine ---
         const iconData = [
-            { src: 'Icons/YoBr_Icon_nena.webp', name: 'nena', desc: 'Default theme asset icon design variant', glow: 'bg-purple-500/30' },
-            { src: 'Icons/YoBr_Icon_nenaBlue.webp', name: 'nenaBlue', desc: 'Bespoke blue color theme structural design', glow: 'bg-blue-500/30' },
-            { src: 'Icons/YoBr_Icon_nenaClub.webp', name: 'nenaClub', desc: 'Deep neon club aesthetics design layout look', glow: 'bg-fuchsia-500/30' },
-            { src: 'Icons/YoBr_Icon_sea001.webp', name: 'sea001', desc: 'Clean coastal seaside premium style profile', glow: 'bg-cyan-500/30' },
+            { src: 'Icons/YoBr_Icon_nena.webp', name: 'nena', descKey: 'icon_nena_desc', glow: 'bg-purple-500/30' },
+            { src: 'Icons/YoBr_Icon_nenaBlue.webp', name: 'nenaBlue', descKey: 'icon_nena_blue_desc', glow: 'bg-blue-500/30' },
+            { src: 'Icons/YoBr_Icon_nenaClub.webp', name: 'nenaClub', descKey: 'icon_nena_club_desc', glow: 'bg-fuchsia-500/30' },
+            { src: 'Icons/YoBr_Icon_sea001.webp', name: 'sea001', descKey: 'icon_sea001_desc', glow: 'bg-cyan-500/30' },
         ];
         let currentIconIdx = 0;
         let iconTimer = null;
@@ -1560,7 +1565,7 @@
             setTimeout(() => {
                 img.src = d.src;
                 name.textContent = d.name;
-                desc.textContent = d.desc;
+                desc.textContent = _t(d.descKey);
                 glow.className = `absolute inset-0 rounded-3xl blur-2xl ${d.glow} scale-125 transition-all duration-700`;
                 img.style.opacity = '1';
                 img.style.transform = 'scale(1)';
@@ -1594,6 +1599,25 @@
             }, { threshold: 0.25 });
             iconObserver.observe(subscriptionSection);
         }
+
+        // --- Proximity Stealth Touch Toggle (prevents scroll/long-press conflicts) ---
+        (function () {
+            const btn = document.getElementById('trigger-hide');
+            const label = document.getElementById('trigger-hide-label');
+            let stealthOn = false;
+            if (!btn) return;
+            btn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                stealthOn = !stealthOn;
+                if (stealthOn) {
+                    activateHide();
+                    label.textContent = _t('stealth_btn_active');
+                } else {
+                    deactivateHide();
+                    label.textContent = _t('stealth_btn_default');
+                }
+            }, { passive: false });
+        })();
 
         // --- Accordion Deployment Steps Handler Mechanics ---
         function toggleAccordion(id) {
