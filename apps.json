@@ -1,0 +1,24 @@
+{
+  "name": "YorunoBrowser Source",
+  "identifier": "madeforme.Yoruno-Browser",
+  "apps": [
+    {
+      "name": "YorunoBrowser",
+      "bundleIdentifier": "madeforme.Yoruno-Browser",
+      "developerName": "MadeForMe",
+      "subtitle": "Useful everything at night.",
+      "localizedDescription": "A one-handed web browser & file manager for iOS. Optimized for nighttime use.",
+      "iconURL": "https://github.com/C0A2518617/YorunoBrowser_Official/blob/main/Icons/YoBr_Icon_nena.webp?raw=true",
+      "tintColor": "#194141",
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-05-29",
+          "downloadURL": "https://github.com/C0A2518617/YorunoBrowser_Official/releases/download/v1.0.0/YorunoBrowser.ipa",
+          "size": 23600000,
+          "localizedDescription": "Initial release! Added one-handed UI and Dark Mode."
+        }
+      ]
+    }
+  ]
+}
