@@ -110,7 +110,7 @@ Save videos, audio, and multiple images directly from supported sites.
 ### Supported Sites
 | Status | Example Sites |
 |--------|---------------|
-| ✅ Supported (HLS/MP4) | Xvideos / Pornhub / TokyoMotion etc. |
+| ✅ Supported (HLS/MP4) | Many sites |
 | 🔗 Redirect (External DL) | YouTube |
 | ⚠️ NoSound | X(Twitter) |
 | ❌ Unsupported (DRM) | Netflix / Amazon Prime Video, etc. |
