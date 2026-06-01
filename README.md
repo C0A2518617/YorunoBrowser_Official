@@ -131,7 +131,7 @@ Available as a monthly subscription on Patreon.
 | Plan | Price | Content DL | Additional Settings | File Conversion | Theme | Discord |
 |------|-------|:----------:|:-------------------:|:---------------:|:-----:|:-------:|
 | **Free** | $0 / mo | 10 DL/day | - | — | — | — |
-| **Standard** | $1 / mo | Unlimited | - | — | — | — |
+| **Standard** | $2 / mo | Unlimited | - | — | — | — |
 | **Pro** | $5 / mo | Unlimited | ✅ | ✅ | — | — |
 | **Premium** | $20 / mo | Unlimited | ✅ | ✅ |  ✅ | ✅  |
 | **Supporter** | $100 / mo | Unlimited | ✅ | ✅ | ✅ | ✅ |
