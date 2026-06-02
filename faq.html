@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YorunoBrowser FAQ</title>
+    <meta name="description" content="YorunoBrowser FAQ and contact guide. Find help for usage, bug reports, and feature suggestions.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YorunoBrowser FAQ">
+    <meta property="og:description" content="YorunoBrowser FAQ and contact guide.">
+    <meta property="og:image" content="Icons/YoBr_Icon_nena.webp">
+    <meta name="theme-color" content="#0b0b10">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        night: {
+                            50: '#f4f4f6',
+                            100: '#e9e9f0',
+                            200: '#d7d7e3',
+                            300: '#babacb',
+                            400: '#9797ad',
+                            500: '#797992',
+                            600: '#606078',
+                            700: '#4d4d61',
+                            800: '#3e3e50',
+                            900: '#22222d',
+                            950: '#0b0b10',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0b10;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3e3e50;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #606078;
+        }
+
+        .glass {
+            background: rgba(15, 15, 25, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-premium {
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(192, 132, 252, 0.18);
+        }
+
+        .navbar-glass {
+            background: rgba(11, 11, 16, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-night-950 text-slate-100 font-sans overflow-x-hidden antialiased">
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-fuchsia-600/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr from-purple-600 to-indigo-500 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
+                    <img src="Icons/YoBr_Icon_nena.webp" alt="YorunoBrowser" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-wider bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">YorunoBrowser</span>
+                    <span class="block text-[10px] text-purple-400 font-semibold tracking-widest uppercase">FAQ</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#questions" class="hover:text-purple-400 transition-colors">Questions</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+                <a href="index.html#download" class="hover:text-purple-400 transition-colors">Install</a>
+            </nav>
+
+            <a href="https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM_ID/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <span>Google Form</span>
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative pt-32 pb-16 md:pt-40 md:pb-20 px-4 overflow-hidden">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Frequently Asked Questions</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                            <span class="block">YorunoBrowser</span>
+                            <span class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">FAQ in one place</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            This page brings together usage help, pricing, supported features, privacy notes, and how to send bug reports or suggestions.
+                            Start here first, then use the Google Form below if you still need help.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
+                                <i data-lucide="bug" class="w-4 h-4 text-rose-400"></i><span>Bug reports</span>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
+                                <i data-lucide="book-open" class="w-4 h-4 text-cyan-400"></i><span>How to use</span>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-night-900/60 border border-night-800 text-xs text-slate-300 flex items-center gap-1.5">
+                                <i data-lucide="lightbulb" class="w-4 h-4 text-yellow-400"></i><span>Suggestions</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="absolute w-72 h-72 rounded-full bg-purple-500/20 blur-3xl -top-10 -z-10 animate-pulse-slow"></div>
+                    <div class="glass-premium rounded-[34px] p-6 w-full max-w-md shadow-2xl border border-purple-500/20 animate-float">
+                        <div class="flex items-center justify-between mb-5">
+                            <div>
+                                <p class="text-xs tracking-widest uppercase text-purple-300 font-bold">FAQ Guide</p>
+                                <p class="text-sm text-slate-400">Jump to the section you need</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                                <i data-lucide="help-circle" class="w-6 h-6 text-white"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <div class="glass rounded-2xl p-4 flex items-center justify-between">
+                                <span>Basics</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500"></i>
+                            </div>
+                            <div class="glass rounded-2xl p-4 flex items-center justify-between">
+                                <span>Download features</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500"></i>
+                            </div>
+                            <div class="glass rounded-2xl p-4 flex items-center justify-between">
+                                <span>Privacy and safety</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="questions" class="py-10 md:py-16 px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center space-y-3 mb-10">
+                    <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">QUESTIONS</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
+                    <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                        These are the questions people ask most often, based on the README and common support requests.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q1</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">Why is it not on the App Store?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Some features do not fit Apple's App Store guidelines, so distribution is designed around AltStore and AltStore PAL instead.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q2</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">Can I use it for free?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Yes. There is a free plan, but it includes a daily download limit. If you use it often, a paid plan is more convenient.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q3</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">Is there an Android, Windows, or Mac version?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            It is currently iOS only. Future platforms may be considered later, but the focus right now is on the iPhone and iPad experience.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q4</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">What does the download feature support?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            It supports HLS / m3u8, MP4, PDF, and image batches. DRM-protected streams and some sites are excluded.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q5</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">What about privacy and data collection?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Data collection is intended to stay minimal. For crashes or bugs, please leave out personal information and send the report through the Google Form.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q6</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">What if I do not know how to use it?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Start with this FAQ and the README. If that still does not solve it, send it through the Google Form as a how-to-use question.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q7</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">Where should I send suggestions or feature requests?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Send them through the Google Form under the Suggestions category. If possible, include screenshots or reproduction steps.
+                        </div>
+                    </article>
+
+                    <article class="faq-item glass rounded-3xl overflow-hidden border border-slate-800">
+                        <button class="faq-toggle w-full p-5 md:p-6 flex items-start justify-between gap-4 text-left" aria-expanded="false">
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-purple-300 uppercase mb-2">Q8</p>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-100">Is background playback supported?</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-500 transition-transform mt-1"></i>
+                        </button>
+                        <div class="faq-panel hidden px-5 md:px-6 pb-6 text-slate-400 text-sm leading-relaxed">
+                            Yes, but only in ContentViewer's Explorer mode. When enabled, the app can use a mini player inside the app, and background playback or Picture in Picture is available outside the app.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="glass-premium rounded-[32px] p-7 md:p-10 border border-purple-500/20 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <span class="text-purple-300 text-xs font-bold tracking-widest uppercase">CONTACT</span>
+                            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Send bug reports, how-to questions, and suggestions here</h2>
+                            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                                Everything is collected in one Google Form. Pick the category that best matches your message so it is easier to route.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+                                <span class="px-3 py-1 rounded-full bg-night-900/70 border border-slate-800">bug</span>
+                                <span class="px-3 py-1 rounded-full bg-night-900/70 border border-slate-800">howtouse</span>
+                                <span class="px-3 py-1 rounded-full bg-night-900/70 border border-slate-800">suggestions</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOLWXuBLHDZlHYvF8ynhiBxGwN25g32cK1RbQoYuYhdvxamw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="group inline-flex w-full items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 hover:scale-[1.01] active:scale-[0.99] transition-all">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                                <span>Open Google Form</span>
+                            </a>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                If you already have a final form URL, replace this link with it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-night-950 border-t border-slate-900 py-10 text-slate-500 text-xs">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center">
+                    <i data-lucide="moon" class="w-3.5 h-3.5 text-white"></i>
+                </div>
+                <span class="font-bold text-slate-300 tracking-wider">YorunoBrowser FAQ</span>
+            </div>
+            <p class="text-center md:text-left">If you are stuck, check the README and this page first.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScOLWXuBLHDZlHYvF8ynhiBxGwN25g32cK1RbQoYuYhdvxamw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">Go to Google Form</a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-glass', 'shadow-xl');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('navbar-glass', 'shadow-xl');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        document.querySelectorAll('.faq-toggle').forEach((button) => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                const isOpen = !panel.classList.contains('hidden');
+
+                document.querySelectorAll('.faq-panel').forEach((otherPanel) => {
+                    otherPanel.classList.add('hidden');
+                });
+                document.querySelectorAll('.faq-icon').forEach((otherIcon) => {
+                    otherIcon.style.transform = 'rotate(0deg)';
+                });
+
+                if (!isOpen) {
+                    panel.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+
+                button.setAttribute('aria-expanded', String(!isOpen));
+            });
+        });
+    </script>
+</body>
+
+</html>
