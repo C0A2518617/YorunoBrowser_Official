@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ウィキペディア風サンプルページ</title>
+    <style>
+        /* --- Wikipedia風の簡易スタイリング --- */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            color: #202122;
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-family: 'Linux Libertine', 'Georgia', serif;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* --- 広告用の透明トリガーレイヤー --- */
+        #ad-trigger-overlay {
+            display: none; /* 初期状態は非表示（JSで制御） */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9998;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        /* --- 出会い系風の怪しいポップアップ広告 --- */
+        #suspicious-popup {
+            display: none; /* 初期状態は非表示 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background: linear-gradient(135deg, #ff007f, #7f00ff);
+            border: 4px solid #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+            z-index: 9999;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+            animation: popBlink 0.5s infinite alternate;
+        }
+
+        /* 動画映えするように点滅させるアニメーション */
+        @keyframes popBlink {
+            0% { border-color: #fff; box-shadow: 0 0 20px #ff007f; }
+            100% { border-color: #ffea00; box-shadow: 0 0 40px #ffea00; }
+        }
+
+        #suspicious-popup h2 {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            color: #ffea00;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        #suspicious-popup p {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffea00;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.3rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 0 #ccbb00;
+            transition: transform 0.1s;
+        }
+
+        .cta-button:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #fff;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">偽ペディア</div>
+        <span style="font-size: 0.8rem; color: #72777d;">フリー百科事典</span>
+    </header>
+    
+    <div class="container">
+        <h1>インターネット (歴史)</h1>
+        <p><strong>インターネット</strong>（英: Internet）は、地球規模で構築された、インターネット・プロトコル・スイートを使用するコンピュータネットワークである。</p>
+        <p>1960年代にアメリカ国防総省の資金提供による研究から始まった。初期の主要なネットワークであるARPANETは、分散型の制御を持ち、堅牢な通信網を構築するための試みとして開発され、その後の技術革新の礎となった。</p>
+        <p>※現在、このページは広告ブロックのデモ画面として機能しています。</p>
+    </div>
+
+    <div id="ad-trigger-overlay"></div>
+
+    <div id="suspicious-popup">
+        <div class="close-btn" onclick="closePopup()">×</div>
+        <h2>💖 近所の既婚者と即マッチ 💖</h2>
+        <p>【限定】今だけ登録無料でメッセージ送り放題！お近くの寂しい異性があなたを待っています。</p>
+        <a href="#" class="cta-button" onclick="alert('デモ：登録サイトへ遷移')">今すぐ無料登録！</a>
+    </div>
+
+    <script>
+        // URLパラメータを取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const adsParam = urlParams.get('ads');
+
+        const overlay = document.getElementById('ad-trigger-overlay');
+        const popup = document.getElementById('suspicious-popup');
+
+        // ads=off ではない時だけ、透明なボタンを有効化する
+        if (adsParam === 'off') {
+            console.log('広告ブロック有効（ads=off）: 透明ボタンは設置しません。');
+        } else {
+            console.log('広告ブロック無効: 透明ボタンを有効化しました。画面タッチで広告が出ます。');
+            overlay.style.display = 'block';
+
+            // 透明ボタンが押されたらポップアップを表示
+            overlay.addEventListener('click', () => {
+                popup.style.display = 'block';
+                overlay.style.display = 'none'; // 連打防止のために透明レイヤーは消す
+            });
+        }
+
+        // ポップアップのバツボタン用
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
