@@ -7,6 +7,20 @@
 [![Billing](https://img.shields.io/badge/Billing-Patreon-orange?logo=patreon)](https://patreon.com)
 
 ---
+## 📲 Installation
+I support iOS 26.0 and above.(But i have only iPhone17(26.5.1))
+YorunoBrowser is not on the App Store. Install via **AltStore**.
+### EU / Japan Users (Recommended)
+1. Install **AltStore PAL** on your iPhone
+2. A:Copy this URL: altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/source.pal.json"
+3. Install from AltStore
+* Update is automatic. Just open AltStore and check for updates when a new version is released.
+
+### Global
+1. Install **AltServer** on your PC
+2. Install **AltStore** on your iPhone
+3. Download the `.ipa` file from GitHub Releases
+4. Install the IPA via AltStore
 
 ## ✨ Key Features
 
@@ -21,7 +35,7 @@
 
 ### 📚 Me (My Page)
 - Bookmarks / Browsing history / Download history
-- Download history lets you review files chronologically and view detailed error messages
+- Download history lets you review files chronologically and view detailed error messages with copyBtn (e.g., "HTTP 404: get-playlist-metadata)
 
 ### 📁 File / Explorer
 - PC-style list view (filterable by FileType & Size)
@@ -30,7 +44,7 @@
 - **Pitch-correction encoding** — Supports voice changer removal. Check pitch in audio/video with the pitch checker and apply bulk changes
 
 ### 🖼️ File / Grid
-- Quickly browse images, videos, and audio in a grid layout
+- Quickly browse images, videos, and audio in a grid layout with gesture navigation
 
 ### ▶️ File / ContentViewer
 - Swipe left/right to navigate through files
@@ -43,11 +57,30 @@
 
 ### ⚙️ Settings
 - Settings screen with clear descriptions — no guesswork
-- `SearchEngine` / `ThemeColor` / `Icon` / `ForceDarkMode` / `Gesture` / `AdsCleaner` / `ExceptionSite` / `PopupHunter` / `ForceZoom` / `BlockSite` / `SelectToSearch` / `PaddingForOneHand` / `ContentViewer` / `ProximityGesture` / `Legal` / `Version`
+- `SearchEngine` / `ThemeColor` / `Icon` / `ForceDarkMode` / `Gesture` / `AdsCleaner` / `ExceptionSite` / `ForceZoom` / `BlockSite` / `SelectToSearch` / `PaddingForOneHand` / `ContentViewer` / `ProximityGesture` / `DataBackup` / `Legal` / `Version`
+* Search Engine : Google / DuckDuckGo / Bing / YahooJapan
+* Theme Color: Blue/Red/Green/Orange/Purple/Pink/Yellow/16bitBlue?/turquoise blue/lightblue
+* Icon : 4 Icons and more
+* ForceDarkMode : off/smart/Allinvert, exception page
+* Gesture : Left/RightEdgeSwipe
+* AdsCleaner : OnOff, ExceptionSite ,RuleVersion,LastUpdate/Update
+* ForceZoom : OnOff
+* BlockSite : Pages
+* SelectToSearch : OnOff, HapticFeedback, Keyword
+* PaddingForOneHand : OnOff, ExceptionSite
+* ContentViewer : Using a mini-player in a video/audio
+* ProximityGesture : OnOff, URL
+* DataBackup : Backup/Restore(Only LikeTime. If you want bookmarks/histories.json, open yorunobrowserFolder in Files.)
+* Legal : Links
+* Version : Current Version
 
 ### 💳 Billing
-- Plan comparison, download feature list, and usage history displayed in a stylish card UI
-
+- Check Your Plan and Remain of downloads
+- YorunoSubscriptionCard : Beautiful Visual and Amount of monthly downloads, PlanName
+- Warning: Get 100times at firstboot, times cannot be refunded, No charge in failed.
+- Subscriptions : Free / Standard / Pro / Premium / Supporter(Differences and prices)
+- Download features infomation
+- Buttons : PatreonLink / UsageHistory
 ---
 
 ## Screenshots
@@ -135,31 +168,13 @@ Available as a monthly subscription on Patreon.
 | **Pro** | $5 / mo | Unlimited | ✅ | ✅ | — | — |
 | **Premium** | $20 / mo | Unlimited | ✅ | ✅ |  ✅ | ✅  |
 | **Supporter** | $100 / mo | Unlimited | ✅ | ✅ | ✅ | ✅ |
-
+* LINK: https://www.patreon.com/cw/YorunoBrowser
 * Additional Settings : BlockSiteException / PaddingForOneHandException / AdsCleanerException and more. Available from Pro and above.
 * File Conversion : Compress, resize, and more. Available from Pro and above.
 * Theme : Change the theme color and app icon. Available from Premium and above.
 * Discord : Everyone can join the Discord server, but only check-in supporters can talk to the developer.
 * <strong>Recommended: Standard Plan</strong> — All the core features that make this browser great — one-handed operation and more — are available for free. But if you want unlimited video downloads, this is the plan for you. When downloading, you often have to choose between Unknown SD/HD, HLS, and GIF. If you pick wrong, you don't have to wait until tomorrow — no limit means no risk of the video disappearing by the time you come back.
 * Only Standard Plan has a free trial for 7 days.
----
-
-## 📲 Installation
-
-YorunoBrowser is not on the App Store. Install via **AltStore**.
-
-### EU / Japan Users (Recommended)
-1. Install **AltStore PAL** on your iPhone
-2. A:Copy this URL: altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/source.pal.json"
-2. B:[AltStore PAL Open](altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/source.pal.json)
-3. Install from AltStore
-
-### Global
-1. Install **AltServer** on your PC
-2. Install **AltStore** on your iPhone
-3. Download the `.ipa` file from GitHub Releases
-4. Install the IPA via AltStore
-
 ---
 
 ## FAQ
@@ -170,8 +185,10 @@ YorunoBrowser is not on the App Store. Install via **AltStore**.
 5. **Android version?** — Currently iOS only, but an Android version may be considered in the future. *(Seriously though — Android users spend less, and the app would just get cracked with ModApks, so probably not.)*
 6. **Windows/Mac version?** — Would be nice to support someday, but not many people browse on a PC for... *that*.
 7. **Can I decompile it and unlock paid features for free?** — F**K YOU. Are you killing me?
-8. ** Refund?** - Please check patreon's refund policy.
+8. **Refund?** - Please check patreon's refund policy.
 
 ## 📄 License
-
 This software is proprietary. Unauthorized reproduction or redistribution is prohibited.
+Privacy Policy: https://c0a2518617.github.io/YorunoBrowser_Official/PrivacyPolicy.md
+Terms of Service: https://c0a2518617.github.io/YorunoBrowser_Official/TermsOfService.md
+License : https://c0a2518617.github.io/YorunoBrowser_Official/License.md

@@ -15,14 +15,15 @@
             "bundleIdentifier": "madeforme.Yoruno-Browser",
             "developerName": "YorunoBrowser",
             "marketplaceID": "6774615970",
-            "subtitle": "A one-handed web browser & file manager for iOS.",
-            "localizedDescription": "YorunoBrowser is a premium iOS browser and file manager built for one-handed use. It includes HLS / media downloading, forced dark mode, ad blocking, popup blocking, tab groups, and file management tools.",
+            "subtitle": "HLS/MP4/ImageBulk downloader, OneHanded UI.",
+            "localizedDescription": "YorunoBrowser is a one-handed iOS browser and file manager built for late-night browsing and media saving.\n\nFeatures:\n• HLS / MP4 / bulk image downloading with a single tap\n• Forced dark mode (Smart / All-invert)\n• Ad blocker with per-site exceptions\n• Popup & transparent overlay blocker\n• One-handed UI — gestures and controls consolidated at the bottom\n• Tab groups\n• Built-in file manager with list/grid views, sorting, and file conversion\n• LikeTime timestamps — jump to favorite scenes in video/audio\n• SelectToSearch — search selected text with custom keywords\n• Pitch correction / voice changer removal (bulk)\n\nSubscription plans: Free (10 DL/day) / Standard / Pro / Premium / Supporter",
             "iconURL": "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Icons/YoBr_Icon_nena.webp",
             "tintColor": "#004D4D",
             "screenshots": [
-                "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/BrowserTop1.webp",
                 "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/BrowserTop2.webp",
-                "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/Settings.webp"
+                "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/contentviewer.jpg",
+                "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/imggrid.png",
+                "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/demo01_05.webp"
             ],
             "versions": [
                 {
