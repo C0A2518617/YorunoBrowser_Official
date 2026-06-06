@@ -1,7 +1,7 @@
 {
     "name": "YorunoBrowser Official Source",
-    "subtitle": "Official source for YorunoBrowser and related releases.",
-    "description": "Official AltStore source for YorunoBrowser, a one-handed iOS browser and file manager with media downloading, forced dark mode, ad blocking, tab groups, and file tools.",
+    "subtitle": "HLS / Media Downloader, OneHanded iOS Browser & File Manager",
+    "description": "HLS / media downloader, adcleaner, Onehanded iOS Browser/FileManager",
     "iconURL": "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Icons/YoBr_Icon_nena.webp",
     "website": "https://c0a2518617.github.io/YorunoBrowser_Official/",
     "fediUsername": "YorunoBrowser",
