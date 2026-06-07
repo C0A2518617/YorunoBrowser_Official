@@ -1,4 +1,5 @@
 {
+    "identifier": "madeforme.yorunobrowser.altpal",
     "name": "YorunoBrowser Official Source",
     "subtitle": "Welcome to Underground Apps Hub. Made for me and you.",
     "description": "YorunoBrowser(Useful WebBrowser/FileManager) and more.",
@@ -15,11 +16,12 @@
             "bundleIdentifier": "madeforme.Yoruno-Browser",
             "developerName": "YorunoBrowser",
             "marketplaceID": "6774615970",
+            "category": "utilities",
             "subtitle": "HLS/MP4/ImageBulk downloader, OneHanded UI.",
             "localizedDescription": "YorunoBrowser is a one-handed iOS browser and file manager built for late-night browsing and media saving.\n\nFeatures:\n• HLS / MP4 / bulk image downloading with a single tap\n• Forced dark mode (Smart / All-invert)\n• Ad blocker with per-site exceptions\n• Popup & transparent overlay blocker\n• One-handed UI — gestures and controls consolidated at the bottom\n• Tab groups\n• Built-in file manager with list/grid views, sorting, and file conversion\n• LikeTime timestamps — jump to favorite scenes in video/audio\n• SelectToSearch — search selected text with custom keywords\n• Pitch correction / voice changer removal (bulk)\n\nSubscription plans: Free (10 DL/day) / Standard / Pro / Premium / Supporter",
             "iconURL": "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Icons/YoBr_Icon_nena.webp",
             "tintColor": "#004D4D",
-            "screenshots": [
+            "screenshotURLs": [
                 "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/BrowserTop2.webp",
                 "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/contentviewer.jpg",
                 "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Imgs/imggrid.png",
@@ -31,10 +33,14 @@
                     "buildVersion": "2",
                     "date": "2026-06-06T00:00:00Z",
                     "size": 7159772,
-                    "downloadURL": "https://github.com/C0A2518617/YorunoBrowser_Official/releases/download/v1.0.0/f59c6239-9fb1-3c01-8ebb-5dbe28f277be.ipa",
+                    "downloadURL": "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/YorunoBrowser/variant/f59c6239-9fb1-3c01-8ebb-5dbe28f277be.ipa",
                     "localizedDescription": "Initial release of YorunoBrowser."
                 }
-            ]
+            ],
+            "appPermissions": {
+                "entitlements": [],
+                "privacy": {}
+            }
         }
     ],
     "news": []
