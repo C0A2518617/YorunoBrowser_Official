@@ -27,16 +27,22 @@ YorunoBrowser is not on the App Store. Install via **AltStore**.
 * i don't support iPad. If you want, let's find .ipa for iPad at this repository.
 * Update is not automatic. You need to download the new .ipa and install it via AltStore every time.
 
+### Support
+- English / 日本語 / 繁体中文 / Français / Deutsch (when 1.1.0)
+- iOS 26.0 and above (iPhone 17(26.5.1) is the only test device)
+- Not compatible with iPadOS (iPad support may be considered in the future)
+
 ## ✨ Key Features
 
 ### 🌐 Browser
 - **Optimized for one-handed use** — Gesture-enabled UI consolidated at the bottom with top/bottom padding, so your thumb handles everything
 - **Forced dark mode** — Automatically darkens white-heavy sites. Easy on the eyes for late-night browsing
 - **Tab groups** — Organize tabs by purpose
-- **Content saving** — Download media like `.ts` / `.mp4` with a single tap
+- **Content saving** — Download media like `.ts` / `.mp4` / `images` with a single tap
 - **Ad blocker** — Removed at the CSS level. Supports custom per-site exceptions
 - **Popup & transparent overlay blocker** — Automatically eliminates intrusive elements
 - **SelectToSearch** — A Search button appears when you select text. Search Google with a custom keyword (e.g., `{text} full episode`)
+- **Darker Toggle** - Add a darker layer to the screen for even more comfortable night browsing (above 1.1.0)
 
 ### 📚 Me (My Page)
 - Bookmarks / Browsing history / Download history
@@ -55,6 +61,7 @@ YorunoBrowser is not on the App Store. Install via **AltStore**.
 - Swipe left/right to navigate through files
 - **LikeTime (timestamps)** — Jump to your favorite scenes anytime
 - **25% skip buttons** — Move playback position without reaching to the screen edge (prevents dropping your phone)
+- **rotate 90°** - when you feel the video is rotated wrong, just rotate it 90° and more with a button. (above 1.1.0)
 
 ### 📺 File / YoruTube (Coming Soon)
 - Browse local files in a YouTube-like UI
