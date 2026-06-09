@@ -8,7 +8,7 @@
 
 ---
 ## 📲 Installation
-I support iOS 26.0 and above.(But i have only iPhone17(26.5.1))
+I support iOS 26.3.1 and above.(But i have only iPhone17(26.5.1))
 YorunoBrowser is not on the App Store. Install via **AltStore**.
 ### EU / Japan Users (Recommended)
 1. Install **AltStore PAL** on your iPhone [![Distribution](https://img.shields.io/badge/Install-AltStore-blue)](https://altstore.io)
