@@ -5,7 +5,7 @@
     "description": "YorunoBrowser(Useful WebBrowser/FileManager) and more.",
     "iconURL": "https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/Icons/YoBr_Icon_nena.webp",
     "website": "https://c0a2518617.github.io/YorunoBrowser_Official/",
-    "fediUsername": "YorunoBrowser",
+    "fediUsername": "YorunoTeam",
     "tintColor": "#004D4D",
     "featuredApps": [
         "madeforme.Yoruno-Browser"
@@ -14,7 +14,7 @@
         {
             "name": "YorunoBrowser",
             "bundleIdentifier": "madeforme.Yoruno-Browser",
-            "developerName": "YorunoBrowser",
+            "developerName": "YorunoTeam",
             "marketplaceID": "6774615970",
             "category": "utilities",
             "subtitle": "HLS/MP4/ImageBulk downloader, OneHanded UI.",
