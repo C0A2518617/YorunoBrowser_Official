@@ -1,9 +1,26 @@
 # 🌙 YorunoBrowser
 > **The ultimate underground browser that will never pass the App Store** — A one-handed web browser & file manager for iOS
-
 [![Platform](https://img.shields.io/badge/Platform-iOS-black?logo=apple)](https://altstore.io)
 [![Distribution](https://img.shields.io/badge/Install-AltStore-blue)](https://altstore.io)
 [![Billing](https://img.shields.io/badge/Billing-Patreon-orange?logo=patreon)](https://patreon.com)
+
+<a href="https://c0a2518617.github.io/YorunoBrowser_Official/" target="_blank"> OFFICIAL PAGE</a>
+<a href="https://c0a2518617.github.io/YorunoBrowser_Official/" target="_blank"> OFFICIAL PAGE</a>
+<a href="https://c0a2518617.github.io/YorunoBrowser_Official/" target="_blank"> OFFICIAL PAGE</a>
+<a href="https://c0a2518617.github.io/YorunoBrowser_Official/" target="_blank"> OFFICIAL PAGE</a>
+<a href="https://c0a2518617.github.io/YorunoBrowser_Official/" target="_blank"> OFFICIAL PAGE</a>
+  <table>
+    <tr>
+      <td><img src="Imgs/paddingForOneHand.webp" width="240" alt="Download demo 01"></td>
+      <td><img src="Imgs/sts.webp" width="240" alt="Download demo 02"></td>
+      <td><img src="Imgs/downloadConsent.webp" width="240" alt="Download demo 03"></td>
+    </tr>
+    <tr>
+      <td><img src="Imgs/contentGrid.jpg" width="240" alt="Download demo 04"></td>
+      <td><img src="Imgs/contentviewer.webp" width="240" alt="Download demo 05"></td>
+      <td><img src="Imgs/comicReader.webp" width="240" alt="Download demo 06"></td>
+    </tr>
+  </table>
 
 ---
 ## 📲 Installation
@@ -47,6 +64,7 @@ altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser
 - **Popup & transparent overlay blocker** — Automatically eliminates intrusive elements
 - **SelectToSearch** — A Search button appears when you select text. Search Google with a custom keyword (e.g., `{text} full episode`)
 - **Darker Toggle** - Add a darker layer to the screen for even more comfortable night browsing (above 1.1.0)
+- **Comic Reader** - When you feel ugly ads and response, you can use it. Faster and low power consumption. (above 1.3.0)
 
 ### 📚 Me (My Page)
 - Bookmarks / Browsing history / Download history
@@ -99,51 +117,6 @@ altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser
 - Download features infomation
 - Buttons : PatreonLink / UsageHistory
 ---
-
-## Screenshots
-
-### 🌐 BrowserTop (PaddingForOneHand / Scroll padding)
-
-<table>
-  <tr>
-    <td><img src="Imgs/BrowserTop1.webp" width="280" alt="BrowserTop (scroll padding) 1"></td>
-    <td><img src="Imgs/BrowserTop2.webp" width="280" alt="BrowserTop (scroll padding) 2"></td>
-  </tr>
-</table>
-
-### 📥 Download Feature Demo (demo01)
-
-<details>
-  <summary>Open demo screenshots</summary>
-  <br>
-  <table>
-    <tr>
-      <td><img src="Imgs/demo01_01.webp" width="240" alt="Download demo 01"></td>
-      <td><img src="Imgs/demo01_02.webp" width="240" alt="Download demo 02"></td>
-      <td><img src="Imgs/demo01_03.webp" width="240" alt="Download demo 03"></td>
-    </tr>
-    <tr>
-      <td><img src="Imgs/demo01_04.webp" width="240" alt="Download demo 04"></td>
-      <td><img src="Imgs/demo01_05.webp" width="240" alt="Download demo 05"></td>
-      <td><img src="Imgs/demo01_06.webp" width="240" alt="Download demo 06"></td>
-    </tr>
-    <tr>
-      <td><img src="Imgs/demo01_07.webp" width="240" alt="Download demo 07"></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-</details>
-
-### 📚 Bookmarks / ⚙️ Settings / 💳 Billing
-
-<table>
-  <tr>
-    <td><img src="Imgs/Bookmarks.webp" width="240" alt="Bookmarks"></td>
-    <td><img src="Imgs/Settings.webp" width="240" alt="Settings"></td>
-    <td><img src="Imgs/Billing.webp" width="240" alt="Billing"></td>
-  </tr>
-</table>
 
 ## Download Feature
 
