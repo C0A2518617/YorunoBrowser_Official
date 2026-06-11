@@ -161,7 +161,6 @@ Save videos, audio, and multiple images directly from supported sites.
 | Status | Example Sites |
 |--------|---------------|
 | ✅ Supported (HLS/MP4) | General HLS / MP4 Streams (e.g., Public video platforms, Major web media sites, etc.) |
-| 🔗 Redirect (External DL) | YouTube |
 | ⚠️ NoSound | X(Twitter) |
 | ❌ Unsupported (DRM) | Netflix / Amazon Prime Video, etc. |
 

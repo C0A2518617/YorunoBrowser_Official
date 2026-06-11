@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YorunoBrowser — 夜のための、片手ブラウザ。</title>
-<meta name="description" content="App Storeには並ばない、iOS向けアングラブラウザ&ファイルマネージャ。片手操作・強制ダークモード・コンテンツ保存。AltStoreで配布中。">
+<meta name="description" content="片手操作・強制ダークモード・ワンタップ保存。深夜のための iOS ブラウザ&ファイルマネージャ。App Storeにはない、AltStoreで配布中。">
+<meta property="og:title" content="YorunoBrowser — 夜のための、片手ブラウザ。">
+<meta property="og:description" content="親指だけで完結。白いサイトは夜に変え、欲しいものはワンタップで保存。AltStoreで配布中。">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -75,7 +78,7 @@ h2{
 .hr{border:0;border-top:1px solid var(--line);margin:0}
 .focus{color:var(--moon);font-weight:700}
 
-/* ====== ヘッダー(最小限・操作は下に置く) ====== */
+/* ====== ヘッダー ====== */
 header{
   display:flex;justify-content:space-between;align-items:center;
   padding:20px 22px;max-width:1060px;margin:0 auto;
@@ -187,41 +190,43 @@ th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted
 .errs code{color:var(--danger)}
 .fineprint{font-size:12px;color:var(--muted);margin-top:14px}
 
-/* ====== 料金 ====== */
-.plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
-.plan{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-  padding:24px 18px;display:flex;flex-direction:column;gap:6px;position:relative;
+/* ====== 無料バナー(料金詳細の代わり) ====== */
+.free-band{
+  background:linear-gradient(180deg, rgba(255,217,140,.06), rgba(255,217,140,.02));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
 }
-.plan .pname{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
-.plan .price{font-family:var(--disp);font-size:30px;font-weight:800;margin:4px 0 2px}
-.plan .price small{font-size:13px;color:var(--muted);font-family:var(--body);font-weight:400}
-.plan ul{list-style:none;margin-top:10px;flex:1}
-.plan li{font-size:12.5px;color:var(--muted);padding:5px 0;border-bottom:1px dashed var(--line)}
-.plan li.ok{color:var(--text)}
-.plan li.ok::before{content:"✓ ";color:var(--neon)}
-.plan-rec{border-color:var(--moon);box-shadow:0 0 0 1px var(--moon), 0 10px 50px rgba(255,217,140,.12)}
-.plan-rec .badge{
-  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-  background:var(--moon);color:#241a02;font-size:11px;font-weight:700;
-  padding:3px 12px;border-radius:99px;white-space:nowrap;
+.free-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  padding:44px 0;
 }
-.plan .pbtn{
-  margin-top:14px;text-align:center;font-size:13px;font-weight:700;
-  padding:10px;border-radius:10px;border:1px solid var(--line);color:var(--text);
-}
-.plan-rec .pbtn{background:var(--moon);color:#241a02;border-color:transparent}
-.plan .pbtn:hover{text-decoration:none;opacity:.9}
-.plans-note{font-size:12.5px;color:var(--muted);margin-top:20px}
+.free-inner .lead{font-family:var(--disp);font-weight:800;font-size:clamp(22px,3.6vw,30px);letter-spacing:.03em}
+.free-inner .lead em{font-style:normal;color:var(--moon)}
+.free-inner p{color:var(--muted);font-size:14px;margin-top:8px;max-width:34em}
 
-/* ====== インストール ====== */
-.install-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.route{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px}
-.route h3{font-size:17px;margin-bottom:4px}
-.route .rsub{font-family:var(--mono);font-size:11px;color:var(--neon);margin-bottom:16px;display:block}
+/* ====== インストール(ページの主役) ====== */
+.install{background:rgba(17,22,48,.35)}
+.pal-card{
+  background:var(--panel);border:1px solid var(--moon);
+  box-shadow:0 0 0 1px var(--moon), 0 16px 60px rgba(255,217,140,.10);
+  border-radius:var(--radius);padding:32px 30px;margin-bottom:18px;
+}
+.pal-card .rsub{font-family:var(--mono);font-size:11px;color:var(--moon);letter-spacing:.14em;display:block;margin-bottom:6px}
+.pal-card h3{font-size:20px;margin-bottom:18px}
+.iflow{list-style:none;counter-reset:i;display:grid;gap:14px}
+.iflow li{
+  counter-increment:i;position:relative;padding:16px 16px 16px 64px;
+  background:#0B0F22;border:1px solid var(--line);border-radius:14px;
+}
+.iflow li::before{
+  content:counter(i);position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  font-family:var(--mono);font-size:16px;font-weight:700;color:#241a02;background:var(--moon);
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+}
+.iflow b{display:block;font-size:15px}
+.iflow span{font-size:13px;color:var(--muted)}
 .copybox{
   display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch;background:#0B0F22;border:1px solid var(--line);
-  border-radius:12px;padding:10px 12px;margin:12px 0;
+  border-radius:12px;padding:10px 12px;margin:12px 0 4px;
 }
 .copybox code{
   font-family:var(--mono);font-size:11px;color:var(--neon);
@@ -232,24 +237,37 @@ th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted
   border:0;border-radius:10px;padding:0 18px;min-width:132px;min-height:40px;cursor:pointer;
 }
 .copybox button:hover{background:var(--moon);color:#241a02}
+.alt-route{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;
+}
+.alt-route summary{
+  cursor:pointer;font-weight:700;font-size:15px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.alt-route summary::-webkit-details-marker{display:none}
+.alt-route summary::after{content:"＋";color:var(--moon);font-family:var(--mono);transition:transform .2s}
+.alt-route[open] summary::after{transform:rotate(45deg)}
+.alt-route ol{margin:16px 0 0;padding-left:1.2em;font-size:14px;color:var(--muted)}
+.alt-route .rsub{font-family:var(--mono);font-size:11px;color:var(--neon);display:block;margin:12px 0 0}
 
 /* ====== FAQ ====== */
-details{border-bottom:1px solid var(--line)}
-summary{
+details.faq{border-bottom:1px solid var(--line)}
+.faq summary{
   cursor:pointer;padding:20px 4px;font-weight:700;font-size:15px;
   list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;
 }
-summary::-webkit-details-marker{display:none}
-summary::after{content:"＋";color:var(--moon);font-family:var(--mono);transition:transform .2s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 4px 20px;color:var(--muted);font-size:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--moon);font-family:var(--mono);transition:transform .2s}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq p{padding:0 4px 20px;color:var(--muted);font-size:14px}
 
 /* ====== フッター ====== */
 footer{padding:60px 0 40px;color:var(--muted);font-size:13px}
 footer .cols{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
 
-/* ====== 親指バー(シグネチャ:アプリと同じく操作は下) ====== */
+/* ====== 親指バー ====== */
 .thumb-bar{
   position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
   display:flex;align-items:center;gap:4px;
@@ -279,15 +297,11 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
   .crescent{width:220px;height:220px;right:-40px;top:-60px}
   .feat-grid{grid-template-columns:1fr 1fr}
   .shots{grid-template-columns:1fr 1fr}
-  .dl-grid,.install-grid{grid-template-columns:1fr}
-  .plans{grid-template-columns:1fr 1fr}
-  .plan-rec{order:-1;grid-column:1/-1}
+  .dl-grid{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   section{padding:64px 0}
   .feat-grid{grid-template-columns:1fr}
-  .plans{grid-template-columns:1fr}
-  .plan-rec{grid-column:auto}
   .thumb-bar .tb-hide-sm{display:none}
   .copybox{grid-template-columns:1fr}
   .copybox button{width:100%}
@@ -320,21 +334,14 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
       <h1>夜のための、<br><em>片手</em>ブラウザ。</h1>
       <p class="sub">
         親指だけで、すべてが終わる。操作系はぜんぶ画面の下。
-        白いサイトは強制的に夜に変え、欲しいコンテンツはワンタップで保存。
-        深夜のブラウジングのために作られた、ブラウザ&ファイルマネージャ。
+        昼のサイトは魔法でに夜に、欲しいコンテンツはワンタップで保存。
+        深夜のブラウジングのために作られた、ブラウザ&amp;ファイルマネージャ。
       </p>
       <p class="note"><s>App Store</s> → AltStoreで配布中。審査には、永遠に通らない。</p>
       <div class="cta-row">
-        <a class="btn btn-moon" href="#install">AltStoreでインストール</a>
-        <a class="btn btn-ghost" href="#features">機能を見る ↓</a>
+        <a class="btn btn-moon" href="#install">入れ方を見る →</a>
+        <a class="btn btn-ghost" href="#features">何ができる? ↓</a>
       </div>
-    </div>
-    <div class="hero-right">
-      <figure class="phone">
-        <!-- TODO: ヒーロー用スクショに差し替え -->
-        <img src="Imgs/hero_main.webp" alt="YorunoBrowserのブラウザ画面(強制ダークモード適用中)">
-        <figcaption class="phone-cap">ForceDarkMode: ON / PaddingForOneHand: ON</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -343,9 +350,9 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
   <ul>
     <li>iOS 26.3.1+ / iPhone専用</li>
     <li>🇯🇵 🇬🇧 🇩🇪 🇫🇷 🇹🇼 対応</li>
-    <li>Age 15–17+</li>
     <li>データ収集なし</li>
-    <li>AltStore / AltStore PAL</li>
+    <li>コア機能は無料</li>
+    <li>AltStore PAL</li>
   </ul>
 </div>
 
@@ -354,81 +361,68 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow">Features</p>
     <h2>右手にiPhone。左手は、自由。</h2>
-    <p class="lede">片手で完結するUI設計を軸に、深夜の閲覧体験を全方位でチューニング。</p>
+    <p class="lede">片手で完結するUI設計を軸に、深夜の閲覧体験を全方位でチューニング。動画で見たアレ、全部入ってる。</p>
     <div class="feat-grid">
       <article class="feat">
+        <img src="Imgs/paddingForOneHand.webp">
         <span class="ico">👍</span>
         <h3>片手操作に最適化</h3>
         <p>ジェスチャー対応のUIを画面下部に集約。上下パディングで、画面の上端に親指を伸ばす日々は終わり。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/forceDarkMode.webp">
         <span class="ico">🌑</span>
         <h3>強制ダークモード</h3>
         <p>白基調のサイトを自動で暗転。off / smart / AllInvert から選べて、例外ページの指定もOK。</p>
       </article>
       <article class="feat">
-        <span class="ico">🔅</span>
-        <h3>Darkerトグル</h3><span class="tag">v1.1.0+</span>
-        <p>画面にさらに暗いレイヤーを一枚。最低輝度でもまだ眩しい、そんな深夜のための機能。<br><b style="color:var(--moon)">→ このページ下の🌙ボタンで体験できます。</b></p>
-      </article>
-      <article class="feat">
+        <img src="Imgs/downloadConsent.webp">
         <span class="ico">📥</span>
         <h3>コンテンツ保存</h3>
         <p>.ts / .mp4 / 画像などのメディアをワンタップでダウンロード。失敗したDLは回数を消費しません。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/adCleaner.webp">
         <span class="ico">🚫</span>
         <h3>広告ブロッカー</h3>
         <p>CSSレベルで広告を除去。ポップアップや透明オーバーレイも自動排除。サイト別の例外設定にも対応。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/sts.webp">
         <span class="ico">🔍</span>
         <h3>SelectToSearch</h3>
         <p>テキスト選択で検索ボタンが出現。「{text} full episode」のようなカスタムキーワード検索も。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/darkerToggle.webp">
+        <span class="ico">🔅</span>
+        <h3>Darkerトグル</h3><span class="tag">v1.1.0+</span>
+        <p>画面にさらに暗いレイヤーを一枚。最低輝度でもまだ眩しい深夜のために。<br><b style="color:var(--moon)">→ 下の🌙ボタンで体験できます。</b></p>
+      </article>
+      <article class="feat">
+        <img src="Imgs/fileManager.webp">
         <span class="ico">📁</span>
         <h3>PC風ファイル管理</h3>
         <p>リスト表示でファイル種別・サイズによる絞り込み。圧縮・リサイズなどの変換もアプリ内で完結。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/reEncode.webp">
         <span class="ico">🎵</span>
         <h3>ピッチ補正エンコード</h3>
         <p>ボイスチェンジャー除去に対応。ピッチチェッカーで確認して、まとめて一括変換。</p>
       </article>
       <article class="feat">
+        <img src="Imgs/contentViewer.webp">
         <span class="ico">▶️</span>
-        <h3>ContentViewer</h3><span class="tag">LikeTime</span>
+        <h3>ContentViewer</h3>
         <p>スワイプでファイル間を移動。お気に入りのシーンはLikeTimeでマーク、25%スキップで落下事故も防止。</p>
       </article>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<!-- ======== SCREENSHOTS ======== -->
-<section id="shots">
-  <div class="wrap">
-    <p class="eyebrow">Screenshots</p>
-    <h2>夜は、こう見える。</h2>
-    <div class="shots">
-      <figure class="shot">
-        <img src="Imgs/BrowserTop1.webp" alt="ブラウザ画面(片手用パディング)">
-        <figcaption>Browser / PaddingForOneHand</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="Imgs/demo01_03.webp" alt="ダウンロード機能のデモ">
-        <figcaption>Download</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="Imgs/Settings.webp" alt="設定画面">
-        <figcaption>Settings</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="Imgs/Billing.webp" alt="課金・プラン画面">
-        <figcaption>Billing</figcaption>
-      </figure>
+      <article class="feat">
+        <img src="Imgs/comicReader.webp">
+        <span class="ico">📚</span>
+        <h3>ComicReader</h3><span class="tag">v1.3.0+</span>
+        <p>重すぎるサイトのJavaScriptを無視して広告レス発熱レスで快適マンガ閲覧。</p>
+      </article>
     </div>
   </div>
 </section>
@@ -446,7 +440,7 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
         <li><b>DLボタンをタップ</b><span>多くの場合、先に動画を再生しておくのがコツ。</span></li>
         <li><b>ファイルを選択</b><span>Unknown SD/HD・HLS・GIFなどから選ぶ。</span></li>
         <li><b>ファイル名と種類を確認</b><span>Execute / Cancel を選択。</span></li>
-        <li><b>ダウンロード実行</b><span>失敗してもDL回数は減らない。安心して挑め。</span></li>
+        <li><b>ダウンロード実行</b><span>失敗してもDL回数は減らない。安心して挑め。まあ間違えて広告GIFを落としたら減るけどね。</span></li>
       </ol>
       <div>
         <div class="tbl-card">
@@ -454,7 +448,6 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
             <thead><tr><th>Status</th><th>サイト例</th></tr></thead>
             <tbody>
               <tr><td>✅ 対応(HLS/MP4)</td><td>一般的なHLS/MP4ストリーム配信サイト</td></tr>
-              <tr><td>🔗 リダイレクト(外部DL)</td><td>YouTube</td></tr>
               <tr><td>⚠️ 音声なし</td><td>X(Twitter)</td></tr>
               <tr><td>❌ 非対応(DRM)</td><td>Netflix / Amazon Prime Video など</td></tr>
             </tbody>
@@ -464,175 +457,97 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
           <code>400</code> DLシステムエラー / <code>404</code> リンク切れ / <code>500</code> サイト側ブロック
         </p>
         <p class="fineprint">※ 対応サイトは予告なく変更される場合があります。ダウンロードは合法の範囲で、自己責任で。</p>
+        <p class="fineprint">※ SystemErrorの場合のみ回数が減りません。間違えてDLした場合は減ります。</p>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="hr">
-
-<!-- ======== PRICING ======== -->
-<section id="pricing">
-  <div class="wrap">
-    <p class="eyebrow">Plans &amp; Pricing</p>
-    <h2>核心機能は、無料。</h2>
-    <p class="lede">片手操作も強制ダークも、タダで全部使える。課金が効いてくるのは、保存したくなってから。Patreonで月額契約。<strong class="focus">PayPal/クレジット/デビット/プリペイド</strong>が使えるらしい。</p>
-    <div class="plans">
-      <div class="plan">
-        <span class="pname">Free</span>
-        <div class="price">$0<small> /月</small></div>
-        <ul>
-          <li class="ok">コア機能すべて</li>
-          <li class="ok">10 DL/日</li>
-          <li>追加設定</li>
-          <li>ファイル変換</li>
-          <li>テーマ / Discord</li>
-        </ul>
-        <a class="pbtn" href="https://www.patreon.com/cw/YorunoBrowser">無料で始める</a>
-      </div>
-      <div class="plan plan-rec">
-        <span class="badge">おすすめ / 7日間無料トライアル</span>
-        <span class="pname">Standard</span>
-        <div class="price">$2<small> /月</small></div>
-        <ul>
-          <li class="ok">コア機能すべて</li>
-          <li class="ok">DL無制限</li>
-          <li>追加設定</li>
-          <li>ファイル変換</li>
-          <li>テーマ / Discord</li>
-        </ul>
-        <a class="pbtn" href="https://www.patreon.com/cw/YorunoBrowser">トライアルを始める</a>
-      </div>
-      <div class="plan">
-        <span class="pname">Pro</span>
-        <div class="price">$5<small> /月</small></div>
-        <ul>
-          <li class="ok">DL無制限</li>
-          <li class="ok">追加設定(例外サイト等)</li>
-          <li class="ok">ファイル変換</li>
-          <li>テーマ</li>
-          <li>Discord</li>
-        </ul>
-        <a class="pbtn" href="https://www.patreon.com/cw/YorunoBrowser">Proにする</a>
-      </div>
-      <div class="plan">
-        <span class="pname">Premium</span>
-        <div class="price">$20<small> /月</small></div>
-        <ul>
-          <li class="ok">DL無制限</li>
-          <li class="ok">追加設定</li>
-          <li class="ok">ファイル変換</li>
-          <li class="ok">テーマ &amp; アイコン</li>
-          <li class="ok">Discord</li>
-        </ul>
-        <a class="pbtn" href="https://www.patreon.com/cw/YorunoBrowser">Premiumにする</a>
-      </div>
-      <div class="plan">
-        <span class="pname">Supporter</span>
-        <div class="price">$100<small> /月</small></div>
-        <ul>
-          <li class="ok">Premiumの全機能</li>
-          <li class="ok">開発者と直接話せる</li>
-          <li class="ok">開発を支える名誉</li>
-          <li>&nbsp;</li>
-          <li>&nbsp;</li>
-        </ul>
-        <a class="pbtn" href="https://www.patreon.com/cw/YorunoBrowser">支援する</a>
-      </div>
+<!-- ======== 無料(料金詳細は出さない) ======== -->
+<div class="free-band">
+  <div class="wrap free-inner">
+    <div>
+      <div class="lead">片手操作も、強制ダークも、<em>ぜんぶ無料</em>。</div>
+      <p>コア機能はFreeプランで全部使えます。課金が効いてくるのは「保存し放題にしたくなってから」。プランの詳細はアプリ内のBilling画面で。</p>
     </div>
-    <p class="plans-note">
-      DL時はUnknown SD/HD・HLS・GIFの選択を迫られることがある。Freeで選択を外すと明日まで待つしかないが、
-      Standardなら無制限——「戻ってきたら動画が消えていた」というリスクとは無縁。
-      初回起動時に100回分のDLを付与(回数の返金は不可・番号付きの失敗時は消費なし)。
-    </p>
+    <a class="btn btn-moon" href="#install">まず入れてみる →</a>
   </div>
-</section>
+</div>
 
-<hr class="hr">
-
-<!-- ======== INSTALL ======== -->
-<section id="install">
+<!-- ======== INSTALL(ページの主役) ======== -->
+<section id="install" class="install">
   <div class="wrap">
     <p class="eyebrow">Installation</p>
-    <h2>App Storeには、ない。</h2>
-    <p class="lede">配布はAltStore経由。iOS 26.3.1以上のiPhone専用(iPadは非対応)。</p>
-    <div class="install-grid">
-      <div class="route">
-        <h3>🇪🇺 🇯🇵 EU / 日本のユーザー</h3>
-        <span class="rsub">RECOMMENDED — AltStore PAL / 自動アップデート対応</span>
-        <ol style="padding-left:1.2em;font-size:14px;color:var(--muted)">
-          <li>iPhoneに <a href="https://altstore.io">AltStore PAL</a> をインストール</li>
-          <li>下のURLをコピー</li>
-          <li>SafariのアドレスバーにペーストしてEnter →「開く」をタップ</li>
-          <li>AltStoreからインストール</li>
-        </ol>
-        <div class="copybox">
-          <code id="srcUrl">altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/source.pal.json</code>
-          <button type="button" onclick="copyUrl(this)">コピー</button>
-        </div>
-        <p class="fineprint">新バージョンが出たらAltStoreを開いてアップデートを確認するだけ。</p>
-      </div>
-      <div class="route">
-        <h3>🌍 その他の地域</h3>
-        <span class="rsub">VIA ALTSERVER — 手動アップデート</span>
-        <ol style="padding-left:1.2em;font-size:14px;color:var(--muted)">
-          <li>PCに <a href="https://altstore.io">AltServer</a> をインストール</li>
-          <li>iPhoneにAltStoreをインストール</li>
-          <li><a href="https://github.com/C0A2518617/YorunoBrowser_Official/releases">GitHub Releases</a> から <code style="font-family:var(--mono);font-size:12px">.ipa</code> をダウンロード</li>
-          <li>AltStore経由でIPAをインストール</li>
-        </ol>
-        <p class="fineprint">アップデートは手動。新しい.ipaを毎回インストールしてください。</p>
-      </div>
+    <h2>App Storeには、ない。<br>でも、3分で入る。</h2>
+    <p class="lede">配布はAltStore経由。iPhone専用(iPad非対応)/ iOS 26.3.1以上。AltStoreが初めてでも大丈夫、下の順番どおりにやればOK。</p>
+
+    <div class="pal-card">
+      <span class="rsub">RECOMMENDED — 🇯🇵 日本 / 🇪🇺 EU のユーザー</span>
+      <h3>AltStore PAL で入れる(自動アップデート対応)</h3>
+      <ol class="iflow">
+        <li>
+          <b>① AltStore PAL をインストール</b>
+          <span>まず <a href="https://altstore.io">altstore.io</a> から AltStore PAL 本体をiPhoneに入れる。これがアプリの土台。</span>
+        </li>
+        <li>
+          <b>② 下のソースURLをコピー</b>
+          <span>YorunoBrowserの配信元アドレス。タップでコピーできる。</span>
+          <div class="copybox">
+            <code id="srcUrl">altstore://source?url=https://raw.githubusercontent.com/C0A2518617/YorunoBrowser_Official/main/source.pal.json</code>
+            <button type="button" onclick="copyUrl(this)">コピー</button>
+          </div>
+        </li>
+        <li>
+          <b>③ Safariのアドレスバーに貼って開く</b>
+          <span>ペーストして実行 →「開く」をタップすると、AltStoreにソースが追加される。</span>
+        </li>
+        <li>
+          <b>④ AltStoreからインストール</b>
+          <span>一覧のYorunoBrowserをインストールしたら完了。あとはAltStoreを開いてアップデートを確認するだけ。</span>
+        </li>
+      </ol>
     </div>
+
+    <details class="alt-route">
+      <summary>🌍 EU/日本以外の地域の人はこちら(AltServer経由)</summary>
+      <span class="rsub">VIA ALTSERVER — 手動アップデート</span>
+      <ol>
+        <li>PCに <a href="https://altstore.io">AltServer</a> をインストール</li>
+        <li>iPhoneにAltStore(Classic)をインストール</li>
+        <li><a href="https://github.com/C0A2518617/YorunoBrowser_Official/releases">GitHub Releases</a> から <code style="font-family:var(--mono);font-size:12px">.ipa</code> をダウンロード</li>
+        <li>AltStore経由でIPAをインストール</li>
+      </ol>
+      <p class="fineprint">この方式はアップデートが手動です。新しい.ipaを毎回インストールしてください。</p>
+    </details>
   </div>
 </section>
 
 <hr class="hr">
 
-<!-- ======== FAQ ======== -->
+<!-- ======== FAQ(インストールを止める不安だけ潰す) ======== -->
 <section id="faq">
   <div class="wrap" style="max-width:760px">
     <p class="eyebrow">FAQ</p>
-    <h2>だいたい全部、答えておく。</h2>
-    <details>
+    <h2>入れる前に、これだけ。</h2>
+    <details class="faq">
+      <summary>無料で使える?</summary>
+      <p>使えます。Freeプランあり。片手操作も強制ダークもタダで全部使えます。ヘビーにDLする人だけ、アプリ内で有料プランを選べばOK。</p>
+    </details>
+    <details class="faq">
       <summary>なんでApp Storeにないの?</summary>
       <p>多くの機能がAppleのガイドラインに抵触するため、App Storeでの配布は不可能です。だからAltStore。</p>
     </details>
-    <details>
-      <summary>中華アプリでしょ?データ抜いてるんでしょ?スパイ!</summary>
+    <details class="faq">
+      <summary>中華アプリでしょ?データ抜いてるんでしょ?</summary>
       <p>開発者は日本在住の個人です。ソースは非公開ですが、データは一切収集していません。仮に集めたとしても、ストレージ代で破産します。</p>
     </details>
-    <details>
-      <summary>無料で使える?</summary>
-      <p>使えます。Freeプランあり。ただしDL回数に制限(10回/日)があるので、ヘビーユーザーは有料プランをどうぞ。</p>
-    </details>
-    <details>
+    <details class="faq">
       <summary>違法じゃないの?</summary>
       <p>このソフトウェアは単なるブラウザであり、違法行為を助長するものではありません。合法の範囲で、自己責任でご利用ください。</p>
     </details>
-    <details>
-      <summary>Android版は?</summary>
-      <p>現在iOSのみ。将来的には検討するかも。<em>(正直に言うとAndroidユーザーは課金しないし、ModApkで即クラックされるので、たぶん出ません。)</em></p>
-    </details>
-    <details>
-      <summary>Windows / Mac版は?</summary>
-      <p>いつか対応できたらいいですね。でもPCで「アレ」を見る人、そんなに多くないので……。</p>
-    </details>
-    <details>
-      <summary>逆コンパイルして課金機能を無料で使っていい?</summary>
-      <p>ふざけるな。それは開発者を殺す行為です。やめてください。</p>
-    </details>
-    <details>
-      <summary>返金は?</summary>
-      <p>Patreonの返金ポリシーをご確認ください。</p>
-    </details>
-    <details>
-      <summary>Patreonとの連携方法は?</summary>
-      <p>アプリを開いて Others/Billing → Login をタップ。ティアが反映されない場合はティアを確認してRefresh。それでもダメなら開発者まで連絡を。</p>
-    </details>
-    <details>
-      <summary>データを移動したい</summary>
-      <p>FilesアプリからOnMyiPhone/YorunoBrowserにあります。bookmarkもhistoryも消しても復活します。</p>
+    <details class="faq">
+      <summary>Android / Windows / Mac版は?</summary>
+      <p>現在iPhoneのみ。将来的には検討するかも……ですが、正直あまり期待はしないでください。</p>
     </details>
   </div>
 </section>
@@ -657,14 +572,13 @@ footer ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
   </div>
 </footer>
 
-<!-- ======== 親指バー(このページも片手で操作できる) ======== -->
+<!-- ======== 親指バー ======== -->
 <nav class="thumb-bar" aria-label="ページ内ナビゲーション">
   <button type="button" class="tb-darker" aria-pressed="false" title="Darkerトグル(アプリの機能を再現)" onclick="toggleDarker(this)">🌙</button>
   <a href="#features">機能</a>
   <a href="#download" class="tb-hide-sm">DL</a>
-  <a href="#pricing">料金</a>
   <a href="#faq" class="tb-hide-sm">FAQ</a>
-  <a href="#install" class="tb-cta">インストール</a>
+  <a href="#install" class="tb-cta">入れる</a>
 </nav>
 
 <script>
