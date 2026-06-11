@@ -1,6 +1,6 @@
 {
-  "version": 13,
-  "updated_at": "2026-06-04",
+  "version": 14,
+  "updated_at": "2026-06-11",
   "rules": [
     {"trigger":{"url-filter":".*.doubleclick.net.*","load-type":["third-party"]},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*pagead2.googlesyndication.com.*"},"action":{"type":"block"}},
@@ -112,10 +112,17 @@
     {"trigger":{"url-filter":".*img.fam-ad.com.*","load-type":["third-party"]},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*al.fanza.co.jp.*","load-type":["third-party"]},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*ad-arrow.com.*","load-type":["third-party"]},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*rt.gsspat.jp.*"},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*gsspat.jp.*","load-type":["third-party"]},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*darnobedienceupscale.com.*"},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*pncloudfl.com.*"},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*magsrv.com.*"},"action":{"type":"block"}},
+    {"trigger":{"url-filter":".*bkcdn.net.*"},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*\\/adserver\\/.*"},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*\\/adservice\\/.*"},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*\\/popunder\\/.*"},"action":{"type":"block"}},
     {"trigger":{"url-filter":".*\\/interstitial\\/.*"},"action":{"type":"block"}},
+    
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":"[class*='exo-'],[id*='exo-'],[class*='exoclick'],[id*='exoclick']"}},
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":"[class*='trafficjunky'],[id*='trafficjunky'],[class*='tj-ad'],[id*='tj-ad']"}},
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":"[class*='popunder'],[id*='popunder'],[class*='pop-under'],[id*='pop-under']"}},
@@ -127,6 +134,6 @@
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":".fam8_scrbnr,.fam8_scrbnr .scrbnr_img,.fam8_scrbnr .scrbnr_cover"}},
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":"#veot_contents_668_171,iframe[src*='advortex.cloud']"}},
     {"trigger":{"url-filter":".*"},"action":{"type":"css-display-none","selector":".gallery-ad-block,[id^='gallery-ad-block']"}},
-    {"trigger":{"url-filter":".*bulog.jp.*"},"action":{"type":"css-display-none","selector":".fc-dialog-container,.fc-ab-dialog"}}
+    {"trigger":{"url-filter":".*","if-domain":["*hitomi.la"]},"action":{"type":"css-display-none","selector":"#container,a.exo-native-widget-item,div[style*='2147483647']"}}
   ]
 }
