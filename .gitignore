@@ -3,3 +3,4 @@
 .DS_Store
 **/.venv/**
 **.secret.md
+generate_secret_tier_keys.py
