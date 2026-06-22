@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://c0a2518617.github.io/YorunoBrowser_Official/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/" />
+    <lastmod>2026-06-22</lastmod>
   </url>
 </urlset>

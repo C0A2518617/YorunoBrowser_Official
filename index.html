@@ -8,6 +8,13 @@
 <meta property="og:title" content="YorunoBrowser — 夜のための、片手ブラウザ。">
 <meta property="og:description" content="親指だけで完結。白いサイトは夜になる。重い漫画サイトも読みやすく。App Storeにはない、AltStoreで配布中。">
 <meta property="og:type" content="website">
+<link id="canonicalUrl" rel="canonical" href="https://c0a2518617.github.io/YorunoBrowser_Official/">
+<link rel="alternate" hreflang="ja" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=ja">
+<link rel="alternate" hreflang="en" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=en">
+<link rel="alternate" hreflang="fr" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=de">
+<link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/YorunoBrowser_Official/?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/YorunoBrowser_Official/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -182,6 +189,7 @@ footer{padding:60px 0 40px;color:var(--muted);font-size:13px}.cols{display:flex;
 <script src="i18n.js"></script>
 <script>
 const LANGS=["ja","en","fr","de","zh"];
+const SITE_URL="https://c0a2518617.github.io/YorunoBrowser_Official/";
 const I18N_STORAGE_KEY="yorunobrowser.lang";
 let currentLang="ja";
 const textBindings=[
@@ -210,8 +218,11 @@ function storedLang(){try{return localStorage.getItem(I18N_STORAGE_KEY)||"";}cat
 function saveLang(lang){try{localStorage.setItem(I18N_STORAGE_KEY,lang);}catch{}}
 function initialLang(){const params=new URLSearchParams(location.search);return normalizeLang(params.get("lang"))||normalizeLang(storedLang())||normalizeLang(navigator.language)||"ja";}
 function dict(){return (window.I18N&&window.I18N[currentLang])||{};}
-function applyLang(lang,persist=true){if(!window.I18N)return;currentLang=LANGS.includes(lang)?lang:"ja";const t=dict();document.documentElement.lang=currentLang==="zh"?"zh-Hant":currentLang;document.title=t.metaTitle||document.title;textBindings.forEach(([selector,key])=>{const el=document.querySelector(selector);if(el&&t[key])el.innerHTML=t[key];});attrBindings.forEach(([selector,attr,key])=>{const el=document.querySelector(selector);if(el&&t[key])el.setAttribute(attr,t[key]);});const langSelect=document.getElementById("langSelect");if(langSelect)langSelect.value=currentLang;if(persist)saveLang(currentLang);}
-document.addEventListener("DOMContentLoaded",()=>{applyLang(initialLang(),false);const langSelect=document.getElementById("langSelect");if(langSelect)langSelect.addEventListener("change",event=>applyLang(event.target.value));});
+function languageUrl(lang){return `${SITE_URL}?lang=${encodeURIComponent(lang)}`;}
+function updateLanguageUrl(lang){const url=new URL(location.href);url.searchParams.set("lang",lang);history.replaceState(null,"",`${url.pathname}${url.search}${url.hash}`);}
+function updateCanonicalUrl(){const canonical=document.getElementById("canonicalUrl");if(!canonical)return;const requestedLang=normalizeLang(new URLSearchParams(location.search).get("lang"));canonical.href=requestedLang?languageUrl(requestedLang):SITE_URL;}
+function applyLang(lang,persist=true,updateUrl=false){if(!window.I18N)return;currentLang=LANGS.includes(lang)?lang:"ja";const t=dict();document.documentElement.lang=currentLang==="zh"?"zh-Hant":currentLang;document.title=t.metaTitle||document.title;textBindings.forEach(([selector,key])=>{const el=document.querySelector(selector);if(el&&t[key])el.innerHTML=t[key];});attrBindings.forEach(([selector,attr,key])=>{const el=document.querySelector(selector);if(el&&t[key])el.setAttribute(attr,t[key]);});const langSelect=document.getElementById("langSelect");if(langSelect)langSelect.value=currentLang;if(persist)saveLang(currentLang);if(updateUrl)updateLanguageUrl(currentLang);updateCanonicalUrl();}
+document.addEventListener("DOMContentLoaded",()=>{applyLang(initialLang(),false);const langSelect=document.getElementById("langSelect");if(langSelect)langSelect.addEventListener("change",event=>applyLang(event.target.value,true,true));});
 function toggleDarker(btn){document.body.classList.toggle('darker');btn.setAttribute('aria-pressed',document.body.classList.contains('darker'));}
 function copyUrl(btn){const t=dict();const url=document.getElementById('srcUrl').textContent.trim();if(!navigator.clipboard||!navigator.clipboard.writeText){btn.textContent=t.copyFallback||'手動でコピー';return;}navigator.clipboard.writeText(url).then(()=>{btn.textContent=t.copiedBtn||'コピー済み';setTimeout(()=>btn.textContent=t.copyBtn||'コピー',1600);}).catch(()=>{btn.textContent=t.copyFallback||'手動でコピー';});}
 </script>
