@@ -1,12 +1,12 @@
 {
     "identifier": "madeforme.4me.altpal",
-    "name": "4MeTeam Official Source",
-    "subtitle": "Welcome to Underground Apps Hub. Made for me and you.",
-    "description": "4Me(Useful WebBrowser/FileManager) and more.",
-    "iconURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/YoBr_Icon_nena.webp",
+    "name": "4Me Team Official Source",
+    "subtitle": "An intuitive personal space for digital organization. Made for your workflow.",
+    "description": "4Me (Useful Web Browser & File Manager) and efficiency utilities.",
+    "iconURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/4me_normal.png",
     "website": "https://c0a2518617.github.io/4Me/",
     "fediUsername": "4MeTeam",
-    "tintColor": "#004D4D",
+    "tintColor": "#34C759",
     "featuredApps": [
         "madeforme.Yoruno-Browser"
     ],
@@ -17,15 +17,15 @@
             "developerName": "4MeTeam",
             "marketplaceID": "6774615970",
             "category": "utilities",
-            "subtitle": "HLS/MP4/ImageBulk downloader, OneHanded UI.",
-            "localizedDescription": "4Me is a one-handed iOS browser and file manager built for late-night browsing and media saving.\n\nFeatures:\n• HLS / MP4 / bulk image downloading with a single tap\n• Forced dark mode (Smart / All-invert)\n• Ad blocker with per-site exceptions\n• Popup & transparent overlay blocker\n• One-handed UI — gestures and controls consolidated at the bottom\n• Tab groups\n• Built-in file manager with list/grid views, sorting, and file conversion\n• LikeTime timestamps — jump to favorite scenes in video/audio\n• SelectToSearch — search selected text with custom keywords\n• Pitch correction / voice changer removal (bulk)\n\nSubscription plans: Free (10 DL/day) / Standard / Pro / Premium / Supporter",
-            "iconURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/YoBr_Icon_nena.webp",
+            "subtitle": "Intuitive thumb-friendly browser and local asset manager.",
+            "localizedDescription": "4Me is a high-productivity one-handed iOS browser and professional file manager built from the ground up for seamless asset management and optimized reading comfort.\n\nFeatures:\n• Advanced One-Handed UI — Gestures and critical navigation bar consolidated at the bottom to prevent accidental drops.\n• Contrast Booster & Comfort tools — Display Dimmer Overlay reduces screen brightness beyond standard system limits for reading in low-light environments.\n• Pro-Grade Local File Explorer — Browse and audit your local documents, images, and digital creative assets in a highly fluid list/grid layout.\n• Smart Sorting & Metadata — Dynamic categorization by size, name, and custom timestamps to keep your local storage perfectly cataloged.\n• Intrusive Content Filter — Experience a clean, lightning-fast web by eliminating disruptive layout elements and intrusive tracking scripts.\n• Content Tab Groups — Easily segment your active browsing and reading sessions by research topics.\n• Secure Vault — Protect your private folders with optional biometric authentication (Face ID / Touch ID).",
+            "iconURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/4me_normal.png",
             "tintColor": "#004D4D",
             "screenshotURLs": [
-                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/darkerToggle.webp",
+                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/comparison.webp",
                 "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/contentviewer.webp",
-                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/imggrid.webp",
-                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/fileManager.webp"
+                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/IMG_1600.webp",
+                "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/IMG_1601.webp"
             ],
             "versions": [
                 {
@@ -34,7 +34,7 @@
                     "date": "2026-06-09T00:00:00Z",
                     "size": 7300000,
                     "downloadURL": "https://raw.githubusercontent.com/C0A2518617/4Me/refs/heads/main/releases/1.2/",
-                    "localizedDescription":"Performance & Battery \n\nThis update is focused entirely on making the browser lighter, cooler, and easier on your battery.\n- Major CPU usage reduction. Fixed an issue where the browser kept the CPU running at high load (60–90%) even when sitting idle on a single\ntab, causing noticeable device heating. Idle and general browsing CPU usage is now dramatically lower and stable.\n- Cooler device, longer battery. With the CPU no longer spinning in the background, the device stays much cooler during use and battery drain\nis significantly improved.\n- Smoother UI. Eliminated unnecessary redraws across the address bar and browser view, so the interface feels more responsive.\n- Lighter new tabs. Opening a new tab no longer keeps a hidden page running in the background.\nNo new features and no changes to your settings or data — just a faster, cooler, more efficient 4Me."
+                    "localizedDescription": "Performance & Battery Optimization\n\nThis update is focused entirely on making the browser lighter, cooler, and easier on your device battery.\n- Major CPU usage reduction. Resolved an issue where background web viewer operations kept the CPU running at a high load, causing noticeable device heating. Idle and general browsing CPU usage is now stable.\n- Cooler device, longer battery life. With processing optimized in the background, the device stays much cooler during extended reading sessions.\n- Smoother UI feedback. Eliminated unnecessary redraws across the address bar and core views for an enhanced thumb-friendly interaction.\n- Lighter viewport resources. Enhanced tab initialization to free up hidden framework memory allocations instantly."
                 },
                 {
                     "version": "1.1",
@@ -42,7 +42,7 @@
                     "date": "2026-06-08T00:00:00Z",
                     "size": 7250000,
                     "downloadURL": "https://raw.githubusercontent.com/C0A2518617/4Me/refs/heads/main/releases/1.1/",
-                    "localizedDescription": "1. Performance & Stability Optimizations\nCPU Usage Reduction: Optimized to allow CPU usage to drop below 5%.\nThumbnail Generation & Thread Fixes: Fixed the infinite concurrent thumbnail generation in ContentGrid and resolved the issue where loadItems() would freeze/occupy the main thread.\nThumbnail Loop & Overheating Fix: Fixed a bug in ContentGrid where failing to display thumbnails caused an infinite loop, which led to smartphone overheating.\nBackground Audio Playback: Audio will no longer stop playing when switching tabs.\n2. New Features & Content Control\nRedirect Prevention (stopRedirect): Added a stopRedirectToggle next to the AdCleanerToggle. When turned ON, automatic page redirects are blocked, and a manual button to proceed is displayed instead.\nPlayback End Action: Added a PlaybackEndAction button next to \"Close\" in the ContentViewer, allowing users to choose between next, stop, or loop when a video ends.\nFolder Hiding Feature: Added the ability to hide specific folders from the ContentGrid. You can select a folder in Explorer and tap the \"slashed eye icon\" in the top right to hide it.\nPage Indicator: Added a Page Indicator to the ContentViewer.\n3. Ad Blocker & Premium Plan Updates\nAd-Block Links: Added links related to ad-blocking features.\nAd Cleaner Toggle (AdCleanerToggle): Added this toggle above the address bar. For Free/Standard plans, changes last for the current session only; for higher plans, the state is saved permanently in settings.\n4. UI, Design & Feedback Enhancements\nExtra Dim Mode (darkerToggle): Added a darkerToggle to both browserView and ContentViewer, allowing users to make the screen even darker than standard dark mode.\nDefault Theme Color: Changed the DefaultThemeColor to Orange.\nNew App Icons: Added new icon variations (nena Orange / Pink).\nHaptic/Operation Feedback: Added sensory feedback when changing volume and brightness.\nLayout Layout/Padding Fix: Fixed a layout bug on the initial Files/Explorer page where the vertical padding (Padding.y) became abnormally large when the MiniPlayer was active.\nForce Dark Mode Clean-up: Removed redundant/unnecessary filters from the ForceDarkMode feature.\n5. File Formats & Detection Expansion\n.ts File Thumbnail Support: The browser now generates thumbnails for .ts files in bulk when the HLS server is running (such as during content playback).\nExpanded ImageBulk Detection: Expanded the detection range for ImageBulk to recognize more images.\n6. Licensing & Localization\nLicense Migration: Migrated the license management to GitHub and updated it.\nMulti-language Support: Added official support for Japanese, French, German, and Traditional Chinese (zh-Hant)."
+                    "localizedDescription": "1. Performance & Stability Optimizations\n- CPU Usage Reduction: Optimized core web routines to significantly lower background overhead.\n- Thumbnail Generation & Thread Fixes: Resolved the layout rendering deadlock in ContentGrid and stabilized image pre-caching routines on the main thread.\n- Thermal Runway Prevention: Fixed a rendering loop in the asset explorer that triggered high resource allocation and device warmth.\n- Continuous Audio Viewport: Web-audio framework will no longer halt when switching active workspace tabs.\n\n2. New Features & Content Control\n- Redirect Prevention: Added a navigation lock toggle next to the Content Filter. When turned ON, automated cross-domain page redirects are safely blocked with a manual confirmation layout.\n- Workspace End Action: Added a PlaybackEndAction interface to the asset viewer, allowing users to configure continuous media behavior (Next / Stop / Loop).\n- Dynamic Workspace Hiding: Added the ability to catalog and hide specific asset folders using biometric credentials.\n\n3. Interface, Formatting & Engineering Comfort\n- Display Dimmer Control: Integrated an ultra-low brightness overlay to prevent optical fatigue in pitch-black environments.\n- Content Filter Enhancements: Streamlined native filter tables to drastically minimize initial asset parsing latency.\n- Haptic Operation Feedback: Fine-tuned sensory tactical response when modifying standard viewport layout variables."
                 },
                 {
                     "version": "1.0",
@@ -50,7 +50,7 @@
                     "date": "2026-06-06T00:00:00Z",
                     "size": 7159772,
                     "downloadURL": "https://raw.githubusercontent.com/C0A2518617/4Me/refs/heads/main/releases/1.0/",
-                    "localizedDescription": "Initial release of 4Me."
+                    "localizedDescription": "Initial release of 4Me - Content Explorer."
                 }
             ],
             "appPermissions": {
@@ -60,28 +60,16 @@
         }
     ],
     "news": [
-            {
-                "id": "2026-06-09-performance-update",
-                "identifier": "app_update",
-                "caption": "4Me 1.2 Performance Update Released!",
-                "tintColor": "#004D4D",
-                "notify": true,
-                "imageURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Imgs/settings.webp",
-                "title": "4Me 1.2 Performance Update Released!",
-                "date": "2026-06-09T00:00:00Z",
-                "content": "We are thrilled to announce the release of 4Me version 1.2, focused entirely on performance and battery optimizations! This update brings significant improvements to make your browsing experience smoother, cooler, and more efficient. Key highlights include a major reduction in CPU usage, which allows it to drop below 5%, eliminating the issue of high CPU load (60–90%) even when idle on a single tab. This results in a much cooler device and significantly improved battery life. Additionally, we have optimized the UI for smoother responsiveness and made new tabs lighter by preventing hidden pages from running in the background. We highly recommend updating to enjoy these performance enhancements. Thank you for your continued support!"
-
-            },
-            {
-                "id": "2026-06-08-update",
-                "identifier": "app_update",
-                "caption": "4Me 1.1 Update Released!",
-                "tintColor": "#004D4D",
-                "notify": true,
-                "imageURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/YoBr_Icon_nena.webp",
-                "title": "4Me 1.1 Update Released!",
-                "date": "2026-06-08T00:00:00Z",
-                "content": "We are excited to announce the release of 4Me version 1.1! This update includes significant performance optimizations, new features, and various bug fixes to enhance your browsing experience. Key highlights include CPU usage reduction, new content control options, an improved ad blocker, and expanded file format support. We highly recommend updating to enjoy these improvements. Thank you for your continued support!"
-            }
+        {
+            "id": "2026-06-08-update",
+            "identifier": "app_update",
+            "caption": "4Me 1.1 Update Released!",
+            "tintColor": "#004D4D",
+            "notify": true,
+            "imageURL": "https://raw.githubusercontent.com/C0A2518617/4Me/main/Icons/4me_normal.png",
+            "title": "4Me 1.1 Update Released!",
+            "date": "2026-06-08T00:00:00Z",
+            "content": "We are excited to announce the release of 4Me version 1.1! This update includes significant performance optimizations, enhanced one-handed UI responsiveness, dynamic content filtration, and comprehensive local asset utility tools. We highly recommend updating for the best low-light reading experience. Thank you for your continued support!"
+        }
     ]
 }
