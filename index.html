@@ -15,6 +15,8 @@
 <link rel="alternate" hreflang="de" href="https://c0a2518617.github.io/4Me/?lang=de">
 <link rel="alternate" hreflang="zh-Hant" href="https://c0a2518617.github.io/4Me/?lang=zh">
 <link rel="alternate" hreflang="x-default" href="https://c0a2518617.github.io/4Me/">
+<link rel="icon" type="image/png" href="Icons/4me_normal.png">
+<link rel="apple-touch-icon" href="Icons/4me_normal.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -90,18 +92,8 @@ footer{padding:60px 0 40px;color:var(--muted);font-size:13px}.cols{display:flex;
     </div>
     <div class="hero-card">
       <div class="crescent" aria-hidden="true"></div>
-      <div class="phone" role="img" aria-label="4Meの片手操作画面">
-        <div class="phone-screen">
-          <div class="phone-status"><span>4Me</span><span>100%</span></div>
-          <div class="phone-search">Search or enter URL</div>
-          <div class="phone-title">Ready for one hand.</div>
-          <div class="phone-list">
-            <div class="phone-row"><span class="phone-icon">1</span><div><b>Reachable controls</b><span>Back, tabs, search</span></div></div>
-            <div class="phone-row"><span class="phone-icon">2</span><div><b>ComicReader</b><span>Focused image reading</span></div></div>
-            <div class="phone-row"><span class="phone-icon">3</span><div><b>Display control</b><span>Comfortable contrast</span></div></div>
-          </div>
-          <div class="phone-toolbar"><span>Home</span><span>Tabs</span><span>Files</span><span>More</span></div>
-        </div>
+      <div class="phone" role="img" aria-label="4MeのContentViewer画面">
+        <img src="Imgs/contentviewer.webp" alt="4MeのContentViewer画面">
       </div>
       <p class="caption">ComicReader and display controls, built for one hand.</p>
     </div>
@@ -145,7 +137,7 @@ footer{padding:60px 0 40px;color:var(--muted);font-size:13px}.cols{display:flex;
       <article class="mini"><img src="Imgs/IMG_1610.webp" alt="SelectToSearch"><h3>SelectToSearch</h3><p>選択したテキストから、好きな検索テンプレートで検索。</p></article>
       <article class="mini"><img src="Imgs/reEncode.webp" alt="エンコード"><h3>変換ツール</h3><p>リサイズ、圧縮、ピッチ補正などをアプリ内で処理。</p></article>
       <article class="mini"><img src="Imgs/IMG_1600.webp" alt="グリッドでファイル探し"><h3>コンテンツグリッド</h3><p>好きな動画を好きな順にグリッド表示。</p></article>
-      <article class="mini"><img src="Imgs/contentviewer.webp" alt="ビューワー"><h3>ファイルビューワー</h3><p>の動画ビューワー。回転も低輝度もタイムスタンプも。</p></article>
+      <article class="mini"><img src="Imgs/contentviewer.webp" alt="ビューワー"><h3>ファイルビューワー</h3><p>動画ビューワー。回転も低輝度もタイムスタンプも。</p></article>
       <article class="mini"><img src="Imgs/IMG_1599.webp" alt="アクティビティ"><h3>アクティビティ</h3><p>あなたの日ごろ見ているページやキーワード、利用時間をローカルで確認できます。</p></article>
     </div>
   </div>
@@ -162,7 +154,7 @@ footer{padding:60px 0 40px;color:var(--muted);font-size:13px}.cols{display:flex;
       <h3>AltStore PALで入れる</h3>
       <ol class="iflow">
         <li><b>AltStore PALをインストール</b><span>まず <a href="https://altstore.io">altstore.io</a> からAltStore PAL本体をiPhoneに入れる。</span></li>
-        <li><b>4MeのソースURLをコピー</b><span>下のボタンでコピーできます。</span><div class="copybox"><code id="srcUrl">altstore://source?url=altstore://source?url=https://raw.githubusercontent.com/C0A2518617/4Me_Official/main/source.pal.json</code><button type="button" onclick="copyUrl(this)">コピー</button></div></li>
+        <li><b>4MeのソースURLをコピー</b><span>下のボタンでコピーできます。</span><div class="copybox"><code id="srcUrl">altstore://source?url=https://raw.githubusercontent.com/C0A2518617/4Me/main/source.pal.json</code><button type="button" onclick="copyUrl(this)">コピー</button></div></li>
         <li><b>Safariのアドレスバーに貼って開く</b><span>ペーストして実行 →「開く」をタップすると、AltStoreにソースが追加されます。</span></li>
         <li><b>AltStoreからインストール</b><span>一覧の4Meをインストールしたら完了。以後はAltStoreからアップデートできます。</span></li>
       </ol>
@@ -195,7 +187,7 @@ const textBindings=[
   ["#why .eyebrow","whyEyebrow"],["#why h2","whyH2"],["#why .lede","whyLede"],["#why .tag","mainFeatureTag"],["#why .pitch article:nth-child(1) h3","pitch1Title"],["#why .pitch article:nth-child(1) p","pitch1Body"],["#why .pitch article:nth-child(2) h3","pitch2Title"],["#why .pitch article:nth-child(2) p","pitch2Body"],["#why .pitch article:nth-child(3) h3","pitch3Title"],["#why .pitch article:nth-child(3) p","pitch3Body"],
   ["#comic .eyebrow","comicEyebrow"],["#comic h2","comicH2"],["#comic .lede","comicLede"],["#comic .checks li:nth-child(1)","comicCheck1"],["#comic .checks li:nth-child(2)","comicCheck2"],["#comic .checks li:nth-child(3)","comicCheck3"],["#comic .checks li:nth-child(4)","comicCheck4"],
   ["#features .eyebrow","featuresEyebrow"],["#features h2","featuresH2"],["#features .lede","featuresLede"],
-  ["#features .mini:nth-child(1) h3","feature1Title"],["#features .mini:nth-child(1) p","feature1Body"],["#features .mini:nth-child(2) h3","feature2Title"],["#features .mini:nth-child(2) p","feature2Body"],["#features .mini:nth-child(3) h3","feature6Title"],["#features .mini:nth-child(3) p","feature6Body"],["#features .mini:nth-child(4) h3","feature7Title"],["#features .mini:nth-child(4) p","feature7Body"],["#features .mini:nth-child(5) h3","feature8Title"],["#features .mini:nth-child(5) p","feature8Body"],
+  ["#features .mini:nth-child(1) h3","feature1Title"],["#features .mini:nth-child(1) p","feature1Body"],["#features .mini:nth-child(2) h3","feature2Title"],["#features .mini:nth-child(2) p","feature2Body"],["#features .mini:nth-child(3) h3","feature6Title"],["#features .mini:nth-child(3) p","feature6Body"],["#features .mini:nth-child(4) h3","feature7Title"],["#features .mini:nth-child(4) p","feature7Body"],["#features .mini:nth-child(5) h3","feature8Title"],["#features .mini:nth-child(5) p","feature8Body"],["#features .mini:nth-child(6) h3","feature9Title"],["#features .mini:nth-child(6) p","feature9Body"],
   [".free-inner .lead","freeLead"],[".free-inner .btn","freeBtn"],
   ["#install .eyebrow","installEyebrow"],["#install h2","installH2"],["#install .lede","installLede"],[".video-guide b","installVideoTitle"],[".video-guide span","installVideoBody"],[".video-guide .btn","installVideoBtn"],[".pal-card .rsub","palRsub"],[".pal-card h3","palH3"],[".iflow li:nth-child(1) b","pal1t"],[".iflow li:nth-child(1) span","pal1s"],[".iflow li:nth-child(2) b","pal2t"],[".iflow li:nth-child(2) span","pal2s"],[".iflow li:nth-child(2) button","copyBtn"],[".iflow li:nth-child(3) b","pal3t"],[".iflow li:nth-child(3) span","pal3s"],[".iflow li:nth-child(4) b","pal4t"],[".iflow li:nth-child(4) span","pal4s"],[".alt-route summary","altSummary"],[".alt-route .rsub","altRsub"],[".alt-route ol li:nth-child(1)","alt1"],[".alt-route ol li:nth-child(2)","alt2"],[".alt-route ol li:nth-child(3)","alt3"],[".alt-route ol li:nth-child(4)","alt4"],[".alt-route .fineprint","altFine"],
   ["#faq .eyebrow","faqEyebrow"],["#faq h2","faqH2"],["#faq .faq:nth-of-type(1) summary","faq1q"],["#faq .faq:nth-of-type(1) p","faq1a"],["#faq .faq:nth-of-type(2) summary","faq2q"],["#faq .faq:nth-of-type(2) p","faq2a"],["#faq .faq:nth-of-type(3) summary","faq5q"],["#faq .faq:nth-of-type(3) p","faq5a"],
@@ -203,9 +195,9 @@ const textBindings=[
   [".thumb-bar a[href='#why']","tbWhy"],[".thumb-bar a[href='#comic']","tbComic"],[".thumb-bar a[href='#faq']","tbFAQ"],[".thumb-bar a[href='#install']","tbInstall"]
 ];
 const attrBindings=[
-  ["meta[property='og:title']","content","ogTitle"],["meta[property='og:description']","content","ogDesc"],
-  [".phone img","alt","heroImageAlt"],["#why .pitch article:nth-child(1) img","alt","pitch1ImageAlt"],["#why .pitch article:nth-child(2) img","alt","pitch2ImageAlt"],["#why .pitch article:nth-child(3) img","alt","pitch3ImageAlt"],["#comic .panel img","alt","comicImageAlt"],
-  ["#features .mini:nth-child(1) img","alt","feature1ImageAlt"],["#features .mini:nth-child(2) img","alt","feature2ImageAlt"],["#features .mini:nth-child(3) img","alt","feature6ImageAlt"],["#features .mini:nth-child(4) img","alt","feature7ImageAlt"],["#features .mini:nth-child(5) img","alt","feature8ImageAlt"],
+  ["meta[name='description']","content","metaDesc"],["meta[property='og:title']","content","ogTitle"],["meta[property='og:description']","content","ogDesc"],
+  [".phone","aria-label","heroImageAlt"],[".phone img","alt","heroImageAlt"],["#why .pitch article:nth-child(1) img","alt","pitch1ImageAlt"],["#why .pitch article:nth-child(2) img","alt","pitch2ImageAlt"],["#why .pitch article:nth-child(3) img","alt","pitch3ImageAlt"],["#comic .panel img","alt","comicImageAlt"],
+  ["#features .mini:nth-child(1) img","alt","feature1ImageAlt"],["#features .mini:nth-child(2) img","alt","feature2ImageAlt"],["#features .mini:nth-child(3) img","alt","feature6ImageAlt"],["#features .mini:nth-child(4) img","alt","feature7ImageAlt"],["#features .mini:nth-child(5) img","alt","feature8ImageAlt"],["#features .mini:nth-child(6) img","alt","feature9ImageAlt"],
   [".video-guide .btn","href","installVideoHref"],[".thumb-bar","aria-label","tbAria"],[".tb-darker","title","darkerTitle"]
 ];
 function normalizeLang(lang){const lower=(lang||"").toLowerCase();if(lower.startsWith("ja"))return"ja";if(lower.startsWith("fr"))return"fr";if(lower.startsWith("de"))return"de";if(lower.startsWith("zh"))return"zh";if(lower.startsWith("en"))return"en";return"";}
